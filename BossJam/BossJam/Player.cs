@@ -17,17 +17,19 @@ namespace BossJam
             mDmg = 10;
         }
 
-        public void Initialize()
+        public Vector2 GetPos()
         {
-            Vector2 lPos = new Vector2(1, 1);
-            Texture2D lTex = TextureHandler.GetTextureHandler().GetTexture(0);
+            return mPos;
+        }
+
+        public override void Initialize(Texture2D lTex, Vector2 lPos)
+        {
             base.Initialize(lTex, lPos);
         }
 
         public override void Update(GameTime lGameTime)
         {
             base.Update(lGameTime);
-            Move();
         }
 
         public override void Draw(SpriteBatch lSpriteBatch)

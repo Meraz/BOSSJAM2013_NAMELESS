@@ -113,6 +113,7 @@
     <Compile Include="AnimatedObj.cs" />
     <Compile Include="AudioHandler.cs" />
     <Compile Include="BearTrapBrain.cs" />
+    <Compile Include="Camera.cs" />
     <Compile Include="EndScreen.cs" />
     <Compile Include="FileReader.cs" />
     <Compile Include="GameObject.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="ScreenHandler.cs" />
     <Compile Include="TextureHandler.cs" />
     <Compile Include="Weapon.cs" />
+    <Compile Include="WorldHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

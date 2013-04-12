@@ -11,12 +11,11 @@ namespace BossJam
     {
         public BearTrapBrain()
         {
+            mSpeed = 1.0f;
         }
 
-        public void Initialize()
+        public override void Initialize(Texture2D lTex, Vector2 lPos)
         {
-            Vector2 lPos = new Vector2(1, 1);
-            Texture2D lTex = TextureHandler.GetTextureHandler().GetTexture(0);
             base.Initialize(lTex, lPos);
         }
 
@@ -28,10 +27,6 @@ namespace BossJam
         public override void Draw(SpriteBatch lSpriteBatch)
         {
             base.Draw(lSpriteBatch);
-        }
-
-        protected override void Move()
-        {
         }
     }
 }

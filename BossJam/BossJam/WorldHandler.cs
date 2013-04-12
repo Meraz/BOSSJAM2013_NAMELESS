@@ -37,7 +37,7 @@ namespace BossJam
             mContentManager = lContentManager;
             mGraphicsDevice = lGraphicsDevice;
             mCamera = new Camera(mGraphicsDevice.Viewport, new Rectangle(0, 0, WorldConstants.WorldSizeX * WorldConstants.TileSize, WorldConstants.WorldSizeY * WorldConstants.TileSize));
-            a = TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.A);
+            //a = TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.A);
 
         }
 

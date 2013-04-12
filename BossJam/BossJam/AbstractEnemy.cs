@@ -29,5 +29,23 @@ namespace BossJam
         {
             base.Draw(lSpriteBatch);
         }
+
+        public void SetPlayerPos(Vector2 playerPos)
+        {
+            mPlayerPos = playerPos;
+        }
+
+        protected override void Move()
+        {
+            if (mPlayerPos.X > mPos.X)
+                mPos.X += mSpeed;
+            else
+                mPos.X += mSpeed * -1;
+
+            if (mPlayerPos.Y > mPos.Y)
+                mPos.Y += mSpeed;
+            else
+                mPos.Y += mSpeed * -1;
+        }
     }
 }
