@@ -1,0 +1,14 @@
+\\filestorage1.bth.se\students\20102\rati10\visual studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.exe
+\\filestorage1.bth.se\students\20102\rati10\visual studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.pdb
+\\filestorage1.bth.se\students\20102\rati10\visual studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\ResolveAssemblyReference.cache
+\\filestorage1.bth.se\students\20102\rati10\visual studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+\\filestorage1.bth.se\students\20102\rati10\visual studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.exe
+\\filestorage1.bth.se\students\20102\rati10\visual studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.pdb
+\\filestorage1.bth.se\students\20102\rati10\visual studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb
+J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\ResolveAssemblyReference.cache
+J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.exe
+J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.pdb
+J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb
+J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.exe
+J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.pdb
