@@ -19,6 +19,11 @@ namespace BossJam
         protected Vector2 mPos;
         protected Rectangle mRect;
 
+        public Rectangle GetRect()
+        {
+            return mRect;
+    }
+
         public GameObject()
         {
         }

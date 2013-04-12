@@ -39,6 +39,11 @@ namespace BossJam
 
             mCamera = new Camera(mGraphicsDevice.Viewport, new Rectangle(0, 0, WorldConstants.WorldSizeX * WorldConstants.TileSize, WorldConstants.WorldSizeY * WorldConstants.TileSize));
 
+            CreateWorld();
+        }
+
+        private void CreateWorld()
+        {
             for (int y = 0; y < WorldConstants.WorldSizeY; y++)
                 for (int x = 0; x < WorldConstants.WorldSizeX; x++)
                 {
@@ -53,6 +58,7 @@ namespace BossJam
         public void Update(GameTime lGameTime)
         {
             mCamera.Update(lGameTime);
+            
         }
 
         public void Draw(SpriteBatch lSpriteBatch)
