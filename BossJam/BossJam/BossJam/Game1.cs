@@ -63,13 +63,6 @@ namespace BossJam
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-
-            Texture2D a = TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.A);
-            spriteBatch.Draw(a, new Rectangle(0, Window.ClientBounds.Height - a.Height, a.Width, a.Height), Color.White);
-
-            spriteBatch.End();
-            
             base.Draw(gameTime);
         }
     }
