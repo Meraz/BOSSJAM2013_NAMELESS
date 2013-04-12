@@ -73,6 +73,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AudioHandler.cs" />
+    <Compile Include="Objects\AnimatedObj.cs" />
+    <Compile Include="Objects\Enemies\AbstractEnemy.cs" />
+    <Compile Include="Objects\Enemies\AirportSecurity.cs" />
+    <Compile Include="Objects\Enemies\BearTrapBrain.cs" />
+    <Compile Include="Objects\Enemies\Neuron.cs" />
+    <Compile Include="Objects\GameObject.cs" />
+    <Compile Include="Objects\Player.cs" />
     <Compile Include="Screens\EndScreen.cs" />
     <Compile Include="Screens\GameScreen.cs" />
     <Compile Include="Screens\ScreenHandler.cs" />

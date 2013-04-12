@@ -7,21 +7,12 @@ using Microsoft.Xna.Framework;
 
 namespace BossJam
 {
-    abstract class AnimatedObj : GameObject
+    abstract class AbstractEnemy : AnimatedObj
     {
-        protected float mSpeed;
-        protected float mAcc;
-        protected Vector2 mDir;
-        protected int mHealth;
-        protected int mDmg;
+        protected Vector2 mPlayerPos;
 
-        public AnimatedObj()
+        public AbstractEnemy()
         {
-            mSpeed = 0.0f;
-            mAcc = 0.0f;
-            mDir = new Vector2(0.0f, 0.0f);
-            mHealth = 0;
-            mDmg = 0;
         }
 
         public override void Initialize(Texture2D lTex, Vector2 lPos)
@@ -38,7 +29,5 @@ namespace BossJam
         {
             base.Draw(lSpriteBatch);
         }
-
-        protected abstract void Move();
     }
 }

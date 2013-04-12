@@ -11,9 +11,10 @@ namespace BossJam
     {
         public enum TextureType //Must be public to allow outside use
         {
-            A = 1,
-            B,
-            C
+            PLAYER = 1,
+            AIRPORT,
+            BEARTRAP,
+            NEURON
         };
         
 

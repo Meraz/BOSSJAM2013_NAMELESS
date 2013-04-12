@@ -7,25 +7,16 @@ using Microsoft.Xna.Framework;
 
 namespace BossJam
 {
-    abstract class AnimatedObj : GameObject
+    class AirportSecurity : AbstractEnemy
     {
-        protected float mSpeed;
-        protected float mAcc;
-        protected Vector2 mDir;
-        protected int mHealth;
-        protected int mDmg;
-
-        public AnimatedObj()
+        public AirportSecurity()
         {
-            mSpeed = 0.0f;
-            mAcc = 0.0f;
-            mDir = new Vector2(0.0f, 0.0f);
-            mHealth = 0;
-            mDmg = 0;
         }
 
-        public override void Initialize(Texture2D lTex, Vector2 lPos)
+        public void Initialize()
         {
+            Vector2 lPos = new Vector2(1, 1);
+            Texture2D lTex = TextureHandler.GetTextureHandler().GetTexture(0);
             base.Initialize(lTex, lPos);
         }
 
@@ -39,6 +30,8 @@ namespace BossJam
             base.Draw(lSpriteBatch);
         }
 
-        protected abstract void Move();
+        protected override void Move()
+        {
+        }
     }
 }
