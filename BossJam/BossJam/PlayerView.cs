@@ -17,17 +17,13 @@ namespace BossJam
         public PlayerView()
         {
             mViewTexture = TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.LAMP);
-
         }
 
         public void Draw(SpriteBatch sB, Rectangle playerPos, float rotation)
         {
-
             LampRect = new Rectangle(512, 384, mViewTexture.Width, mViewTexture.Height);
 
             sB.Draw(mViewTexture, LampRect, null, Color.White, rotation, new Vector2(mViewTexture.Width / 2, mViewTexture.Height / 2), SpriteEffects.None, 0.0f);
-
-
         }
 
     }

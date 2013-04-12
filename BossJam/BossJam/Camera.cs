@@ -54,37 +54,15 @@ namespace BossJam
                  * Matrix.CreateRotationZ(Rotation)
                  * Matrix.CreateTranslation(new Vector3(Origin, 0f));
         }
+
         public virtual void Update(GameTime timeTime)
         {
             KeyboardState ks = Keyboard.GetState();
-            //if (ks.IsKeyDown(Keys.Add))
-            //{
-            //    Zoom += 0.01f;
-            //}
-            //if (ks.IsKeyDown(Keys.Subtract))
-            //{
-            //    Zoom -= 0.01f;
-            //}
-            //if (ks.IsKeyDown(Keys.Multiply))
-            //{
-            //    Zoom = 1;
-            //}
-            if (ks.IsKeyDown(Keys.Right))
-            {
-                Position = new Vector2(Position.X + speed, Position.Y);
-            }
-            if (ks.IsKeyDown(Keys.Left))
-            {
-                Position = new Vector2(Position.X - speed, Position.Y);
-            }
-            if (ks.IsKeyDown(Keys.Up))
-            {
-                Position = new Vector2(Position.X, Position.Y - speed);
-            }
-            if (ks.IsKeyDown(Keys.Down))
-            {
-                Position = new Vector2(Position.X, Position.Y + speed);
-            }
+
+            Position = new Vector2(
+                Player.GetPlayer().GetPos().X - 512.0f, // Hårdkodning för hårdkodningens skull
+                Player.GetPlayer().GetPos().Y - 384.0f);
+
             Matrix.CreateTranslation(Position.X, Position.Y, 0f);
         }
     }
