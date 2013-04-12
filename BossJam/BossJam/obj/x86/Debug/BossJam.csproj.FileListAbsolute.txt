@@ -1,0 +1,10 @@
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.exe
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.pdb
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.exe
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.pdb
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Error.xnb
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp.xnb
+C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp2.xnb
