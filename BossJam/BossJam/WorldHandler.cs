@@ -39,7 +39,6 @@ namespace BossJam
 
             mCamera = new Camera(mGraphicsDevice.Viewport, new Rectangle(0, 0, WorldConstants.WorldSizeX * WorldConstants.TileSize, WorldConstants.WorldSizeY * WorldConstants.TileSize));
 
-            a = TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.AIRPORT);
             for (int y = 0; y < WorldConstants.WorldSizeY; y++)
                 for (int x = 0; x < WorldConstants.WorldSizeX; x++)
                 {
