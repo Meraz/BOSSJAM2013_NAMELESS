@@ -42,11 +42,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Images\Chrysanthemum.jpg">
-      <Name>Chrysanthemum</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Images\Error.bmp">
       <Name>Error</Name>
       <Importer>TextureImporter</Importer>
@@ -54,11 +49,6 @@
     </Compile>
     <Compile Include="Images\Lamp.png">
       <Name>Lamp</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Images\Lamp2.png">
-      <Name>Lamp2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

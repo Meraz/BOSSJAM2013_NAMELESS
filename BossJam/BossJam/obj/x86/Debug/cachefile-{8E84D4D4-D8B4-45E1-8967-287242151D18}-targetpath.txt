@@ -1,7 +1,5 @@
-Content\Images\Chrysanthemum.xnb
 Content\Images\Error.xnb
 Content\Images\Lamp.xnb
-Content\Images\Lamp2.xnb
 Content\Images\Block.xnb
 Content\Images\Player_PH.xnb
 Content\Images\Airport_PH.xnb

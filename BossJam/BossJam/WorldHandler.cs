@@ -29,7 +29,6 @@ namespace BossJam
         public WorldHandler()
         {
             mWorld = new GameObject[WorldConstants.WorldSizeX, WorldConstants.WorldSizeY];
-            
         }
 
         public void Initialize(ContentManager lContentManager, GraphicsDevice lGraphicsDevice)
@@ -45,6 +44,7 @@ namespace BossJam
         private void CreateWorld()
         {
             for (int y = 0; y < WorldConstants.WorldSizeY; y++)
+            {
                 for (int x = 0; x < WorldConstants.WorldSizeX; x++)
                 {
                     if (x == 0 || x == WorldConstants.WorldSizeX - 1 || y == 0 || y == WorldConstants.WorldSizeY - 1)
@@ -53,23 +53,27 @@ namespace BossJam
                         mWorld[x, y] = new EmptyProject();
                     mWorld[x, y].Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.BLOCK), new Vector2(WorldConstants.TileSize * x, WorldConstants.TileSize * y));
                 }
+            }
         }
         
         public void Update(GameTime lGameTime)
         {
             mCamera.Update(lGameTime);
-            
+            Player.GetPlayer().Update(lGameTime);
         }
 
         public void Draw(SpriteBatch lSpriteBatch)
         {
             lSpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, mCamera.GetViewMatrix());
+            Player.GetPlayer().Draw(lSpriteBatch);
 
             for (int y = 0; y < WorldConstants.WorldSizeY; y++)
+            {
                 for (int x = 0; x < WorldConstants.WorldSizeX; x++)
                 {
                     mWorld[x, y].Draw(lSpriteBatch);
                 }
+            }
             lSpriteBatch.End();
         }
     }

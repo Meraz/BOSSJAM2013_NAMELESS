@@ -2,15 +2,6 @@
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Images\Chrysanthemum.jpg</Source>
-      <Name>Images\Chrysanthemum</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb</Output>
-      <Time>2013-04-12T23:13:45.8230037+02:00</Time>
-    </Item>
-    <Item>
       <Source>Images\Error.bmp</Source>
       <Name>Images\Error</Name>
       <Importer>TextureImporter</Importer>
@@ -29,22 +20,13 @@
       <Time>2013-04-12T23:13:45.8350044+02:00</Time>
     </Item>
     <Item>
-      <Source>Images\Lamp2.png</Source>
-      <Name>Images\Lamp2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp2.xnb</Output>
-      <Time>2013-04-12T23:13:45.8360045+02:00</Time>
-    </Item>
-    <Item>
       <Source>Images\Block.png</Source>
       <Name>Images\Block</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Block.xnb</Output>
-      <Time>2013-04-12T23:13:53.5184439+02:00</Time>
+      <Time>2013-04-13T00:51:43.1481675+02:00</Time>
     </Item>
     <Item>
       <Source>Images\Player_PH.png</Source>

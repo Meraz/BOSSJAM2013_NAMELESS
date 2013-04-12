@@ -41,6 +41,7 @@ namespace BossJam
                  * Matrix.CreateRotationZ(Rotation)
                  * Matrix.CreateTranslation(new Vector3(Origin, 0f));
         }
+
         public virtual void Update(GameTime timeTime)
         {
             KeyboardState ks = Keyboard.GetState();
@@ -64,6 +65,10 @@ namespace BossJam
                 if (!(Position.Y + viewPort.Height + speed > Limit.Height))
                     Position.Y += speed;
             }
+            Position = new Vector2(
+                Player.GetPlayer().GetPos().X - 512.0f, // Hårdkodning för hårdkodningens skull
+                Player.GetPlayer().GetPos().Y - 384.0f);
+
 
             Matrix.CreateTranslation(Position.X, Position.Y, 0f);
         }

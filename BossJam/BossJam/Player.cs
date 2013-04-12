@@ -8,23 +8,28 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BossJam
 {
-    class Player : AnimatedObj
+    sealed class Player : AnimatedObj
     {
-        private float mPlayerGravity;
-        
-
-
         public enum PlayerState //Must be public to allow outside use
         {
             GROUND,
             AIR
         };
 
-
+        private float mPlayerGravity;
         private PlayerState mPlayerState;
+        private PlayerView mPV = new PlayerView();
+        static private Player mPlayer = new Player();
 
+        Vector2 mOldMousePos;
+        double mRotation;
 
-        public Player()
+        public static Player GetPlayer()
+        {
+            return mPlayer;
+        }
+
+        private Player()
         {
             mHealth = 100;
             mSpeed = 4.0f;
@@ -32,6 +37,11 @@ namespace BossJam
             mDir = new Vector2(0,0);
             mPlayerGravity = 0.01f;
             mPlayerState = PlayerState.GROUND;
+
+            mOldMousePos.X = Mouse.GetState().X;
+            mOldMousePos.Y = Mouse.GetState().Y;
+
+            CalcRotation();
         }
 
         public Vector2 GetPos()
@@ -51,29 +61,22 @@ namespace BossJam
 
         public override void Draw(SpriteBatch lSpriteBatch)
         {
-
             base.Draw(lSpriteBatch);
+
+            if (mOldMousePos.X != Mouse.GetState().X || mOldMousePos.X != Mouse.GetState().Y)
+            {
+                CalcRotation();
+            }
+
+            mPV.Draw(lSpriteBatch, mRect, (float)mRotation);
         }
 
         protected override void Move()
         {
-            
-            
-            //if (Keyboard.GetState().IsKeyDown(Keys.W))
-            //{
-            //    mPos.Y += mSpeed * -1;
-            //}
-            //if (Keyboard.GetState().IsKeyDown(Keys.S))
-            //{
-            //    mPos.Y += mSpeed;
-            //}
-
-
             if (mPlayerState == PlayerState.AIR)
             {
                 mDir.Y += mPlayerGravity;
             }
-
 
             mDir.X = 0;
 
@@ -94,7 +97,19 @@ namespace BossJam
 
 
             mPos += mDir * mSpeed;
+        }
 
+        private void CalcRotation()
+        {
+            double xLength = mPos.X - Mouse.GetState().X;
+            double yLength = mPos.Y - Mouse.GetState().Y;
+
+            double xSquared = Math.Pow(xLength, 2);
+            double ySquared = Math.Pow(yLength, 2);
+
+            double totLength = Math.Sqrt(xSquared + ySquared);
+
+            mRotation = Math.Asin(yLength / totLength);
         }
     }
 }
