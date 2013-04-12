@@ -10,17 +10,33 @@ namespace BossJam
 {
     class Player : AnimatedObj
     {
+        private float mPlayerGravity;
+        
+
+
+        public enum PlayerState //Must be public to allow outside use
+        {
+            GROUND,
+            AIR
+        };
+
+
+        private PlayerState mPlayerState;
+
 
         public Player()
         {
             mHealth = 100;
-            mSpeed = 2.0f;
+            mSpeed = 4.0f;
             mDmg = 10;
+            mDir = new Vector2(0,0);
+            mPlayerGravity = 0.01f;
+            mPlayerState = PlayerState.GROUND;
         }
 
         public void Initialize()
         {
-            Vector2 lPos = new Vector2(1, 1);
+            Vector2 lPos = new Vector2(1, 300);
             Texture2D lTex = TextureHandler.GetTextureHandler().GetTexture(0);
             base.Initialize(lTex, lPos);
         }
@@ -39,22 +55,44 @@ namespace BossJam
 
         protected override void Move()
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            
+            
+            //if (Keyboard.GetState().IsKeyDown(Keys.W))
+            //{
+            //    mPos.Y += mSpeed * -1;
+            //}
+            //if (Keyboard.GetState().IsKeyDown(Keys.S))
+            //{
+            //    mPos.Y += mSpeed;
+            //}
+
+
+            if (mPlayerState == PlayerState.AIR)
             {
-                mPos.Y += mSpeed * -1;
+                mDir.Y += mPlayerGravity;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
-            {
-                mPos.Y += mSpeed;
-            }
+
+
+            mDir.X = 0;
+
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
-                mPos.X += mSpeed * -1;
+                mDir.X = -1;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
-                mPos.X += mSpeed;
+                mDir.X = 1;
             }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Space) && mPlayerState == PlayerState.GROUND)
+            {
+                mDir.Y = -1;
+                mPlayerState = PlayerState.AIR;
+            }
+
+
+            mPos += mDir * mSpeed;
+
         }
     }
 }
