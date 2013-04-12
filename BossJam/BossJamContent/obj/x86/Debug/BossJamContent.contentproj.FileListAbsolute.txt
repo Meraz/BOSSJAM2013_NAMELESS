@@ -1,2 +1,2 @@
-C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJamContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJamContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJamContent\obj\x86\Debug\BossJamContent.contentprojResolveAssemblyReference.cache

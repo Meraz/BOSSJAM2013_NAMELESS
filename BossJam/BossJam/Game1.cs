@@ -30,9 +30,13 @@ namespace BossJam
         protected override void Initialize()
         {
             base.Initialize();
-            mScreenHandler.Initialize(Content, GraphicsDevice);
             TextureHandler.GetTextureHandler().Initialize(Content);
             AudioHandler.GetAudioHandler().Initialize(Content);
+            Player.GetPlayer().Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.PLAYER), new Vector2(512.0f, 384.0f));
+
+            mScreenHandler.Initialize(Content, GraphicsDevice);
+
+
         }
 
         protected override void LoadContent()
@@ -56,17 +60,14 @@ namespace BossJam
             {
                 this.Exit(); //Add restart method
             }
-
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
-
-            spriteBatch.End();
+            mScreenHandler.Draw(spriteBatch);
             base.Draw(gameTime);
         }
     }
