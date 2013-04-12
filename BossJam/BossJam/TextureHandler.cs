@@ -17,9 +17,7 @@ namespace BossJam
             BEARTRAP,
             NEURON,
             BLOCK,
-            NEURON
         };
-        
 
         //Variables
         static private TextureHandler mTextureHandler = new TextureHandler();
@@ -34,13 +32,14 @@ namespace BossJam
         public void Initialize(ContentManager lContentManager)
         {
             mTexture = new List<Texture2D>();
-            
-            mTexture.Add(lContentManager.Load<Texture2D>("Images/Error"));
-            mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
-            mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
-            mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
-			mTexture.Add(lContentManager.Load<Texture2D>("Images/Lamp"));
-            mTexture.Add(lContentManager.Load<Texture2D>("Images/Block"));
+
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Error")); // 0        
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Player_PH")); // 1 - PLAYER
+			mTexture.Add(lContentManager.Load<Texture2D>("Images/Lamp")); // 2 - LAMP
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Airport_PH")); // 3 - Airportsecurity
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Beartrap_PH")); // 4 - Beartrapbrain
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Neuron_PH")); // 5 - Neuron
+			mTexture.Add(lContentManager.Load<Texture2D>("Images/Block"));
 			mTexture.Add(lContentManager.Load<Texture2D>("Images/Lamp"));
         }
 
