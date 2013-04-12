@@ -12,3 +12,12 @@ J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.pdb
 J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb
 J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.exe
 J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.pdb
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.exe
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\bin\x86\Debug\BossJam.pdb
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.exe
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\obj\x86\Debug\BossJam.pdb
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp.xnb
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp2.xnb

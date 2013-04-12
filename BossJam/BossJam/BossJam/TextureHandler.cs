@@ -30,6 +30,7 @@ namespace BossJam
         {
             mTexture = new List<Texture2D>();
             
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Lamp"));
             mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
         }
 
@@ -38,7 +39,7 @@ namespace BossJam
             if (lTextureType == TextureType.A)
                 return mTexture.ElementAt(0);
             if (lTextureType == TextureType.B)
-                return mTexture.ElementAt(0);
+                return mTexture.ElementAt(1);
             return mTexture.ElementAt(0);
         }
 

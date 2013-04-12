@@ -1,2 +1,3 @@
 \\filestorage1.bth.se\students\20102\rati10\visual studio 2010\Projects\BossJam\BossJam\BossJamContent\obj\x86\Debug\ResolveAssemblyReference.cache
 J:\Visual Studio 2010\Projects\BossJam\BossJam\BossJamContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Thixe\BOSSJAM2013_NAMELESS\BossJam\BossJam\BossJamContent\obj\x86\Debug\ResolveAssemblyReference.cache

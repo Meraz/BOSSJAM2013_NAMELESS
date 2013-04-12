@@ -1,1 +1,3 @@
 Content\Images\Chrysanthemum.xnb
+Content\Images\Lamp.xnb
+Content\Images\Lamp2.xnb
