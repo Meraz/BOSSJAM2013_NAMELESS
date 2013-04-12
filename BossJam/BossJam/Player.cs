@@ -10,6 +10,7 @@ namespace BossJam
 {
     class Player : AnimatedObj
     {
+
         public Player()
         {
             mHealth = 100;
@@ -32,6 +33,7 @@ namespace BossJam
 
         public override void Draw(SpriteBatch lSpriteBatch)
         {
+
             base.Draw(lSpriteBatch);
         }
 

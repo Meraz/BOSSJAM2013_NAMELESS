@@ -12,9 +12,11 @@ namespace BossJam
         public enum TextureType //Must be public to allow outside use
         {
             PLAYER = 1,
+            LAMP,
             AIRPORT,
             BEARTRAP,
             NEURON
+            
         };
         
 
@@ -33,8 +35,9 @@ namespace BossJam
             mTexture = new List<Texture2D>();
             
             mTexture.Add(lContentManager.Load<Texture2D>("Images/Error"));            
-            mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Error"));
 			mTexture.Add(lContentManager.Load<Texture2D>("Images/Lamp"));
+
         }
 
         public Texture2D GetTexture(TextureType lTextureType)
