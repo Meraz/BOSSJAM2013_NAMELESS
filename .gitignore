@@ -1,6 +1,6 @@
 BossJam\BossJam\bin\*
-BossJam\BossJam\obj\*
 BossJam\BossJam\bin\obj\*
+BossJam\obj\*
 BossJam\BossJamContent\bin\*
 BossJam\BossJamContent\bin\obj\*
 *.exe
