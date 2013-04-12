@@ -14,29 +14,28 @@ namespace BossJam
 {
     class GameScreen : AbstractScreen
     {
-      //  private WorldHandler mWorldHandler;
+        private WorldHandler mWorldHandler;
         public GameScreen()
         {
-          //  mWorldHandler = new WorldHandler();
+            mWorldHandler = new WorldHandler();
         }
 
         public override void Initialize(ContentManager lContentManager, GraphicsDevice lGraphicsDevice)
         {
             base.Initialize(lContentManager, lGraphicsDevice);
-           // mWorldHandler.Initialize(lContentManager, mGraphicsDevice);
+            mWorldHandler.Initialize(lContentManager, mGraphicsDevice);
         }
 
         public override void Update(GameTime lGameTime)
         {
             base.Update(lGameTime);
             Console.WriteLine("GameScreen");
-
-        //    mWorldHandler.Update(lGameTime);
+            mWorldHandler.Update(lGameTime);
         }
 
         public override void Draw(SpriteBatch lSpriteBatch)
         {
-         //   mWorldHandler.Draw(lSpriteBatch);
+            mWorldHandler.Draw(lSpriteBatch);
         }
     }
 }

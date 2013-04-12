@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb</Output>
+      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb</Output>
       <Time>2013-04-12T21:39:34.6887773+02:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Error.xnb</Output>
+      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Error.xnb</Output>
       <Time>2013-04-12T21:39:34.6897774+02:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp.xnb</Output>
+      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp.xnb</Output>
       <Time>2013-04-12T21:39:34.6897774+02:00</Time>
     </Item>
     <Item>
@@ -34,8 +34,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp2.xnb</Output>
+      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp2.xnb</Output>
       <Time>2013-04-12T21:39:34.6907774+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Block.png</Source>
+      <Name>Images\Block</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Block.xnb</Output>
+      <Time>2013-04-12T22:27:14.7133614+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -43,10 +52,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJamContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJamContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\bulten\Documents\Visual Studio 2010\Projects\BossJam\BossJam\BossJam\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJamContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJamContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

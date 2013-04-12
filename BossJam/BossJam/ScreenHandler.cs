@@ -46,7 +46,7 @@ namespace BossJam
             mMenuScreen.Initialize(mContentManager, lGraphicsDevice);
             mGameScreen.Initialize(mContentManager, lGraphicsDevice);
             mEndScreen.Initialize(mContentManager, lGraphicsDevice);
-            mScreen = mMenuScreen;
+            mScreen = mGameScreen;
             mCurrentScreenState = ScreenState.Menu; 
         }
 

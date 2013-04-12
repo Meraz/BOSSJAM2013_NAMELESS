@@ -14,7 +14,8 @@ namespace BossJam
             PLAYER = 1,
             AIRPORT,
             BEARTRAP,
-            NEURON
+            NEURON,
+            BLOCK
         };
         
 
@@ -34,7 +35,10 @@ namespace BossJam
             
             mTexture.Add(lContentManager.Load<Texture2D>("Images/Error"));            
             mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
 			mTexture.Add(lContentManager.Load<Texture2D>("Images/Lamp"));
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Block"));
         }
 
         public Texture2D GetTexture(TextureType lTextureType)

@@ -17,7 +17,7 @@ namespace BossJam
         private Vector2 Origin { get; set; }
         public float Zoom { get; set; }
         public float Rotation { get; set; }
-        private Rectangle? Limit { get; set; }
+        private Rectangle Limit { get; set; }
         private Viewport viewPort;
         private Vector2 pPosition;
         private float speed = 10;
@@ -31,17 +31,16 @@ namespace BossJam
                 pPosition = value;
                 if (Limit != null)
                 {
-                    pPosition.X = MathHelper.Clamp(pPosition.X, ((Rectangle)Limit).X, Origin.X + 2000 - viewPort.Width);          //((Rectangle)Limit).Width  Kollar så att kameran håller sig innan för sin max och min-gräns
-                    pPosition.Y = MathHelper.Clamp(pPosition.Y, ((Rectangle)Limit).Y, Origin.Y + 2000 - viewPort.Height);         //((Rectangle)Limit).Height
+                    pPosition.X = MathHelper.Clamp(pPosition.X, ((Rectangle)Limit).X, Origin.X + 1725);          //((Rectangle)Limit).Width  Kollar så att kameran håller sig innan för sin max och min-gräns
+                    pPosition.Y = MathHelper.Clamp(pPosition.Y, ((Rectangle)Limit).Y, Origin.Y + 2000);         //((Rectangle)Limit).Height
                 }
             }
         }
 
-        public Camera(Viewport viewPort, Rectangle? limit)
+        public Camera(Viewport viewPort, Rectangle limit)
         {
             this.viewPort = viewPort;
             this.Limit = limit;
-            //Origin = new Vector2(-viewPort.Width / 2, -viewPort.Height / 2);
             Origin = Vector2.Zero;
             Zoom = 1f;
             Rotation = 0f;
@@ -58,18 +57,18 @@ namespace BossJam
         public virtual void Update(GameTime timeTime)
         {
             KeyboardState ks = Keyboard.GetState();
-            if (ks.IsKeyDown(Keys.Add))
-            {
-                Zoom += 0.01f;
-            }
-            if (ks.IsKeyDown(Keys.Subtract))
-            {
-                Zoom -= 0.01f;
-            }
-            if (ks.IsKeyDown(Keys.Multiply))
-            {
-                Zoom = 1;
-            }
+            //if (ks.IsKeyDown(Keys.Add))
+            //{
+            //    Zoom += 0.01f;
+            //}
+            //if (ks.IsKeyDown(Keys.Subtract))
+            //{
+            //    Zoom -= 0.01f;
+            //}
+            //if (ks.IsKeyDown(Keys.Multiply))
+            //{
+            //    Zoom = 1;
+            //}
             if (ks.IsKeyDown(Keys.Right))
             {
                 Position = new Vector2(Position.X + speed, Position.Y);

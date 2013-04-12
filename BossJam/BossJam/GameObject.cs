@@ -9,8 +9,8 @@ namespace BossJam
 {
     static class GameObjectConstants
     {
-        public const int X = 32;
-        public const int Y = 32;
+        public const int X = 50;
+        public const int Y = 50;
     }
 
     abstract class GameObject

@@ -41,14 +41,14 @@ namespace BossJam
 
         protected virtual void CheckKey()
         {
-            if (mCurrentKeyboardState.IsKeyDown(Keys.Q) && mPreviousKeyboardState.IsKeyUp(Keys.Q))
-                mScreenState = ScreenHandler.ScreenState.Menu;
-            if (mCurrentKeyboardState.IsKeyDown(Keys.W) && mPreviousKeyboardState.IsKeyUp(Keys.W))
-                mScreenState = ScreenHandler.ScreenState.InGame;
-            if (mCurrentKeyboardState.IsKeyDown(Keys.E) && mPreviousKeyboardState.IsKeyUp(Keys.E))
-                mScreenState = ScreenHandler.ScreenState.End;
-            if (mCurrentKeyboardState.IsKeyDown(Keys.O) && mPreviousKeyboardState.IsKeyUp(Keys.O))
-                mScreenState = ScreenHandler.ScreenState.Shutdown;
+            //if (mCurrentKeyboardState.IsKeyDown(Keys.Q) && mPreviousKeyboardState.IsKeyUp(Keys.Q))
+            //    mScreenState = ScreenHandler.ScreenState.Menu;
+            //if (mCurrentKeyboardState.IsKeyDown(Keys.W) && mPreviousKeyboardState.IsKeyUp(Keys.W))
+            //    mScreenState = ScreenHandler.ScreenState.InGame;
+            //if (mCurrentKeyboardState.IsKeyDown(Keys.E) && mPreviousKeyboardState.IsKeyUp(Keys.E))
+            //    mScreenState = ScreenHandler.ScreenState.End;
+            //if (mCurrentKeyboardState.IsKeyDown(Keys.O) && mPreviousKeyboardState.IsKeyUp(Keys.O))
+            //    mScreenState = ScreenHandler.ScreenState.Shutdown;
         }
         
         public virtual void Draw(SpriteBatch lSpriteBatch)
