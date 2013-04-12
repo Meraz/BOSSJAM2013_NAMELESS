@@ -17,7 +17,7 @@ namespace BossJam
         SpriteBatch spriteBatch;
         ScreenHandler mScreenHandler;
         float rot = 0.0f;
-
+        Player mPlayer = new Player();
 
         public Game1()
         {
@@ -26,6 +26,7 @@ namespace BossJam
             Content.RootDirectory = "Content";
             graphics.PreferredBackBufferHeight = 768;
             graphics.PreferredBackBufferWidth = 1024;
+            this.IsMouseVisible = true;
         }
 
         protected override void Initialize()
@@ -36,6 +37,7 @@ namespace BossJam
             mScreenHandler.Initialize(Content);
             TextureHandler.GetTextureHandler().Initialize(Content);
             AudioHandler.GetAudioHandler().Initialize(Content);
+            mPlayer.Initialize();
         }
 
         protected override void LoadContent()
@@ -59,6 +61,12 @@ namespace BossJam
             {
                 this.Exit(); //Add restart method
             }
+<<<<<<< HEAD
+=======
+
+            mPlayer.Update(gameTime);
+             
+>>>>>>> 5e7ec65a861c3f075135d79a8b3aeefeae773f91
 
             
             base.Update(gameTime);
@@ -66,6 +74,7 @@ namespace BossJam
 
         protected override void Draw(GameTime gameTime)
         {
+<<<<<<< HEAD
             GraphicsDevice.Clear(Color.Red);
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.NonPremultiplied);
@@ -81,8 +90,12 @@ namespace BossJam
 
             spriteBatch.Draw(b, new Rectangle(0,0, b.Width, b.Height), Color.White);
            
+=======
+            GraphicsDevice.Clear(Color.Black);
+            spriteBatch.Begin();
+            mPlayer.Draw(spriteBatch);
+>>>>>>> 5e7ec65a861c3f075135d79a8b3aeefeae773f91
             spriteBatch.End();
-            
             base.Draw(gameTime);
         }
     }

@@ -11,8 +11,10 @@ namespace BossJam
     {
         public enum TextureType //Must be public to allow outside use
         {
-            A,
-            B
+            PLAYER = 1,
+            AIRPORT,
+            BEARTRAP,
+            NEURON
         };
         
 
@@ -30,16 +32,20 @@ namespace BossJam
         {
             mTexture = new List<Texture2D>();
             
-            mTexture.Add(lContentManager.Load<Texture2D>("Images/Lamp"));
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Error"));            
             mTexture.Add(lContentManager.Load<Texture2D>("Images/Chrysanthemum"));
+			mTexture.Add(lContentManager.Load<Texture2D>("Images/Lamp"));
         }
 
         public Texture2D GetTexture(TextureType lTextureType)
         {
-            if (lTextureType == TextureType.A)
-                return mTexture.ElementAt(0);
-            if (lTextureType == TextureType.B)
-                return mTexture.ElementAt(1);
+            for(int i = 1; i < mTexture.Capacity; i++)
+            {
+                if((int)lTextureType == i)
+                {
+                    return mTexture.ElementAt(i);
+                }
+            }
             return mTexture.ElementAt(0);
         }
 

@@ -62,6 +62,7 @@ namespace BossJam
 
         private void SwapScreenState(ScreenState lScreenState)
         {
+
             if (lScreenState == ScreenState.Menu)
                 mScreen = mMenuScreen;
             else if (lScreenState == ScreenState.InGame)

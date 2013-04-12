@@ -1,3 +1,7 @@
 Content\Images\Chrysanthemum.xnb
+<<<<<<< HEAD
 Content\Images\Lamp.xnb
 Content\Images\Lamp2.xnb
+=======
+Content\Images\Error.xnb
+>>>>>>> 5e7ec65a861c3f075135d79a8b3aeefeae773f91
