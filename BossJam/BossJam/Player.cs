@@ -24,7 +24,7 @@ namespace BossJam
 
         private float mJumpSpeed = 500;
         private const int MaxPlayerSpeed = 100;
-        private float mPlayerGravity = 5;
+        private float mPlayerGravity = 25;
         
         private PlayerState mPlayerState;
         private PlayerView mPV = new PlayerView();
@@ -135,11 +135,12 @@ namespace BossJam
         public override void Draw(SpriteBatch lSpriteBatch)
         {
             base.Draw(lSpriteBatch);
-
-            if(mDir.X < 0)
+            if (mDir.X < 0)
                 mPV.Draw(lSpriteBatch, mRect, (float)Math.PI);
             else
                 mPV.Draw(lSpriteBatch, mRect, 0.0f);
+
+
 
             lSpriteBatch.Draw(mTex,
                 mPos,

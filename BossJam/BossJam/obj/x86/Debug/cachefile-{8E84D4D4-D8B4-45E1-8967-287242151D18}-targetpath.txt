@@ -7,3 +7,11 @@ Content\Images\Beartrap_PH.xnb
 Content\Images\UI_Overlay.xnb
 Content\Images\Neuron.xnb
 Content\SpriteFont1.xnb
+Content\Images\himmel.xnb
+Content\Images\jord.xnb
+Content\Images\metall-tile.xnb
+Content\Images\monokel.xnb
+Content\Images\rengn.xnb
+Content\Images\taggar.xnb
+Content\Images\träd.xnb
+Content\Images\träd2.xnb

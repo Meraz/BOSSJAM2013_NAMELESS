@@ -47,22 +47,22 @@ namespace BossJam
             KeyboardState ks = Keyboard.GetState();
             if (ks.IsKeyDown(Keys.Right))
             {
-                if (!(Position.X + viewPort.Width + speed > Limit.Width))
+                //if (!(Position.X + viewPort.Width + speed > Limit.Width))
                     Position.X += speed;
             }
             if (ks.IsKeyDown(Keys.Left))
             {
-                if (!(Position.X -speed < 0))
+                //if (!(Position.X -speed < 0))
                     Position.X -= speed;
             }
             if (ks.IsKeyDown(Keys.Up))
             {
-                if (!(Position.Y - speed < 0))
+               // if (!(Position.Y - speed < 0))
                     Position.Y -= speed;
             }
             if (ks.IsKeyDown(Keys.Down))
             {
-                if (!(Position.Y + viewPort.Height + speed > Limit.Height))
+                //if (!(Position.Y + viewPort.Height + speed > Limit.Height))
                     Position.Y += speed;
             }
             Position = new Vector2(

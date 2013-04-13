@@ -17,7 +17,13 @@ namespace BossJam
             BEARTRAP,
             NEURON,
             BLOCK,
-            UI
+            UI,
+            anannanan,
+            JORD,
+            METALL,
+            TREE,
+            HIMMEL,
+            Träd2
         };
 
         //Variables
@@ -43,7 +49,13 @@ namespace BossJam
 			mTexture.Add(lContentManager.Load<Texture2D>("Images/Block")); // 6 - Block
 			mTexture.Add(lContentManager.Load<Texture2D>("Images/Block"));
             mTexture.Add(lContentManager.Load<Texture2D>("Images/UI_Overlay")); //UI-overlay
-        }
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/jord")); //UI-overlay
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/metall-tile")); //UI-overlay
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/träd")); //UI-overlay
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/himmel")); //UI-overlay
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/Träd2")); //UI-overlay
+
+                    }
 
         public Texture2D GetTexture(TextureType lTextureType)
         {

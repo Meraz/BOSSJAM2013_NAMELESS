@@ -13,3 +13,11 @@ C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\BossJam.exe
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\BossJam.pdb
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\obj\x86\Debug\BossJam.exe
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\obj\x86\Debug\BossJam.pdb
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\himmel.xnb
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\jord.xnb
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\metall-tile.xnb
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\monokel.xnb
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\rengn.xnb
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\taggar.xnb
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\träd.xnb
+C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\träd2.xnb

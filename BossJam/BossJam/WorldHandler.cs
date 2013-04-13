@@ -16,22 +16,22 @@ namespace BossJam
         public const int TileSize = 50;
     }
 
-
     class WorldHandler
     {
         private ContentManager mContentManager;
         private GraphicsDevice mGraphicsDevice;
+        int mCurrentEnd = 0;
 
         private Camera mCamera;
-        GameObject[,] mWorld;
-        Texture2D a;
-
+        List<GameObject> mWorldEndless;
+        List<Sprite> mSprite;
 
         AbstractEnemy mNeuron = new Neuron();
 
         public WorldHandler()
         {
-            mWorld = new GameObject[WorldConstants.WorldSizeX, WorldConstants.WorldSizeY];
+            mWorldEndless = new List<GameObject>();
+            mSprite = new List<Sprite>();
         }
 
         public void Initialize(ContentManager lContentManager, GraphicsDevice lGraphicsDevice)
@@ -39,91 +39,90 @@ namespace BossJam
             mContentManager = lContentManager;
             mGraphicsDevice = lGraphicsDevice;
 
-
             mNeuron.Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.NEURON), new Vector2(100, 100));
 
             mCamera = new Camera(mGraphicsDevice.Viewport, new Rectangle(0, 0, WorldConstants.WorldSizeX * WorldConstants.TileSize, WorldConstants.WorldSizeY * WorldConstants.TileSize));
             mNeuron.Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.NEURON), new Vector2(50.0f, 50.0f));
+
+            CreateTree();
             CreateWorld();
+        }
+
+        private void CreateTree()
+        {
+            Random r = new Random(5);
+            mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.HIMMEL), new Vector2(0, 2350 - 563)));
+            mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.HIMMEL), new Vector2(1500, 2350 - 563)));
+            mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.HIMMEL), new Vector2(3000, 2350 - 563)));
+            mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.HIMMEL), new Vector2(4500, 2350 - 563)));
+            mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.HIMMEL), new Vector2(6000, 2350 - 563)));
+            mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.HIMMEL), new Vector2(7500, 2350 - 563)));
+            mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.HIMMEL), new Vector2(9000, 2350 - 563)));
+            mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.HIMMEL), new Vector2(10500, 2350 - 563)));
+            for (int i = 8; i < 28; i++)
+            {
+                mSprite.Add(new Sprite(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.Träd2), new Vector2(r.Next(800, 14000), 1850), 0.5f));
+            }
+
         }
 
         private void CreateWorld()
         {
-            for (int y = 0; y < WorldConstants.WorldSizeY; y++)
+            for (int i = 0; i < 450; i++)
             {
-                for (int x = 0; x < WorldConstants.WorldSizeX; x++)
-                {
-                    if (x == 1 || x == WorldConstants.WorldSizeX - 2 || y == 1 || y == 42 || y == WorldConstants.WorldSizeY - 2)
-                        mWorld[x, y] = new TileObject();
-                    else
-                        mWorld[x, y] = new EmptyProject();
-                    mWorld[x, y].Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.BLOCK), new Vector2(WorldConstants.TileSize * x, WorldConstants.TileSize * y));
-                }
+                mWorldEndless.Add(new TileObject());
+                mWorldEndless.ElementAt(i).Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.JORD), new Vector2(mCurrentEnd + 50 * i, 2350));
             }
+            for (int i = 450; i < 900; i++)
+            {
+                mWorldEndless.Add(new TileObject());
+                mWorldEndless.ElementAt(i).Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.METALL), new Vector2(mCurrentEnd + 50 * (i - 450), 2400));
+            }
+            for (int i = 900; i < 1350; i++)
+            {
+                mWorldEndless.Add(new TileObject());
+                mWorldEndless.ElementAt(i).Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.METALL), new Vector2(mCurrentEnd + 50 * (i - 900), 2450));
+            }
+        }
+
+        private void ChangePositionOnEntities()
+        {
+            Vector2 lVector = Player.GetPlayer().GetPos();
+            lVector.X -= 16000;
+            Player.GetPlayer().SetPosition(lVector);
         }
         
         public void Update(GameTime lGameTime)
         {
             mCamera.Update(lGameTime);
             Player.GetPlayer().UpdateInfo(lGameTime);
-            
-
-
-            int a, b, c, d, e;
-            Vector2 lPos = Player.GetPlayer().GetPos();
-            int x = ((int)lPos.X + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
-            int y = ((int)lPos.Y + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
-            
-            
-            mNeuron.Update(lGameTime);
-            for (int ay = 0; ay < WorldConstants.WorldSizeY-1; ay++)
+            if (Player.GetPlayer().GetPos().X >= 50*350)
             {
-                for (int ax = 0; ax < WorldConstants.WorldSizeX - 1; ax++)
-                {
-                    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[ax, ay], lGameTime);   //Down
-                }
+                ChangePositionOnEntities();
             }
 
-            //if (y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
-            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x, y + 1], lGameTime);   //Down
-
-            //if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX)
-            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y], lGameTime);         //Right
-
-            //if (y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
-            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x, y - 1], lGameTime);         //Up
-            //if (x - 1 >= 0 && x + 1 < WorldConstants.WorldSizeX)
-            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x - 1, y], lGameTime);         //Left
-
-            //if (x - 1 >= 0 && x - 1 < WorldConstants.WorldSizeX &&
-            //   y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
-            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x - 1, y + 1], lGameTime);     //Downleft
-
-            //if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX &&
-            //   y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
-            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y + 1], lGameTime);     //DownRight
-
-            //if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX &&
-            //   y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
-            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y - 1], lGameTime); //UpRight
-
-               Player.GetPlayer().Update(lGameTime);
+            for (int i = 0; i < 1350; i++)
+            {
+                CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorldEndless.ElementAt(i), lGameTime);
+            }
 
 
-            //firstNeuron.Update(lGameTime);
+            Player.GetPlayer().Update(lGameTime);
+
         }
         public void Draw(SpriteBatch lSpriteBatch)
         {
             lSpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, mCamera.GetViewMatrix());
-            Player.GetPlayer().Draw(lSpriteBatch);
-
-            for (int y = 0; y < WorldConstants.WorldSizeY; y++)
+            for (int i = 0; i < 28; i++)
             {
-                for (int x = 0; x < WorldConstants.WorldSizeX; x++)
-                {
-                    mWorld[x, y].Draw(lSpriteBatch);
-                }
+                mSprite.ElementAt(i).Draw(lSpriteBatch);
             }
+            for (int i = 0; i < 1350; i++)
+            {
+                mWorldEndless.ElementAt(i).Draw(lSpriteBatch);
+            }
+
+            Player.GetPlayer().Draw(lSpriteBatch);
             mNeuron.Draw(lSpriteBatch);
             lSpriteBatch.End();
         }
