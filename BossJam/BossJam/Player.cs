@@ -92,8 +92,8 @@ namespace BossJam
             {
                 mDir.X = 1 * lGameTime.ElapsedGameTime.Milliseconds;
             }
-
-            if (mPlayerState != PlayerState.GROUND)
+            
+            if (mPlayerState == PlayerState.AIR)
             {
                 mDir.Y += mPlayerGravity;
             }
@@ -102,10 +102,6 @@ namespace BossJam
                 mDir.X -= 0.2f * lGameTime.ElapsedGameTime.Milliseconds;
             else if (mDir.X < 0)
                 mDir.X += 0.2f * lGameTime.ElapsedGameTime.Milliseconds;
-
-            //if(mDir.X >)
-
-
 
             //if (mHitX)
             //    mDir.X = 0;

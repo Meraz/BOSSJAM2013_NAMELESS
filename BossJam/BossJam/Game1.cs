@@ -67,6 +67,10 @@ namespace BossJam
         protected override void Draw(GameTime gameTime)
         {
             mScreenHandler.Draw(spriteBatch);
+
+
+
+
             base.Draw(gameTime);
         }
     }

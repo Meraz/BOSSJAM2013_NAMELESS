@@ -17,6 +17,7 @@ namespace BossJam
             BEARTRAP,
             NEURON,
             BLOCK,
+            UI
         };
 
         //Variables
@@ -40,6 +41,8 @@ namespace BossJam
             mTexture.Add(lContentManager.Load<Texture2D>("Images/Beartrap_PH")); // 4 - Beartrapbrain
             mTexture.Add(lContentManager.Load<Texture2D>("Images/Neuron_PH")); // 5 - Neuron
 			mTexture.Add(lContentManager.Load<Texture2D>("Images/Block")); // 6 - Block
+			mTexture.Add(lContentManager.Load<Texture2D>("Images/Block"));
+            mTexture.Add(lContentManager.Load<Texture2D>("Images/UI_Overlay")); //UI-overlay
         }
 
         public Texture2D GetTexture(TextureType lTextureType)
