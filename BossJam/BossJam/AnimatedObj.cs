@@ -33,6 +33,7 @@ namespace BossJam
         {
             base.Update(lGameTime);
             Move(lGameTime);
+            Attack();
         }
 
         public override void Draw(SpriteBatch lSpriteBatch)
@@ -41,5 +42,8 @@ namespace BossJam
         }
 
         protected abstract void Move(GameTime lGameTime);
+
+
+        protected abstract void Attack();
     }
 }

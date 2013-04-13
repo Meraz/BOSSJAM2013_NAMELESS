@@ -11,10 +11,13 @@ namespace BossJam
     {
         public Neuron()
         {
+            mDmg = 2;
+            mSpeed = 0.1f;
         }
 
         public override void Initialize(Texture2D lTex, Vector2 lPos)
         {
+
             base.Initialize(lTex, lPos);
         }
 

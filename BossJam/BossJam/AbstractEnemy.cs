@@ -10,6 +10,7 @@ namespace BossJam
     abstract class AbstractEnemy : AnimatedObj
     {
         protected Vector2 mPlayerPos;
+        int cD;
 
         public AbstractEnemy()
         {
@@ -18,6 +19,7 @@ namespace BossJam
         public override void Initialize(Texture2D lTex, Vector2 lPos)
         {
             base.Initialize(lTex, lPos);
+            cD = 0;
         }
 
         public override void Update(GameTime lGameTime)
@@ -32,24 +34,43 @@ namespace BossJam
 
 
         protected override void Move(GameTime lGameTime)
-        {
-            if (mPlayerPos.X > mPos.X)
+        {       
+            //Player.GetPlayer().GetPos().X
+            if (Player.GetPlayer().GetPos().X > mPos.X)
                 mPos.X += mSpeed * lGameTime.ElapsedGameTime.Milliseconds;
             else
                 mPos.X += mSpeed * -1 * lGameTime.ElapsedGameTime.Milliseconds;
 
-            if (mPlayerPos.Y > mPos.Y)
+            if (Player.GetPlayer().GetPos().Y > mPos.Y)
                 mPos.Y += mSpeed * lGameTime.ElapsedGameTime.Milliseconds;
             else
                 mPos.Y += mSpeed * -1 * lGameTime.ElapsedGameTime.Milliseconds;
 
 
-            if (Vector2.Distance(mPos, mPlayerPos) < 50.0f)
+            
+
+        }
+
+        protected override void Attack()
+        {
+
+            if (Vector2.Distance(mPos, Player.GetPlayer().GetPos()) < 50.0f && cD == 0)
             {
-                //Attack function
-
-
+                cD++;
             }
+            else if (Vector2.Distance(mPos, Player.GetPlayer().GetPos()) < 50.0f && cD == 50)
+            {
+                Player.GetPlayer().SetHealth(-mDmg);
+            }
+            else if (cD == 100)
+            {
+                cD = 0;
+            }
+            if (cD > 0)
+            {
+                cD++;
+            }
+
         }
     }
 }

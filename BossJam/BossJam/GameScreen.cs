@@ -21,7 +21,6 @@ namespace BossJam
         private Color mHealthColor;
 
         //REMOVE LATER
-        float health;
         string dialog;
 
         public GameScreen()
@@ -41,7 +40,7 @@ namespace BossJam
 
 
             //REMOVE LATER
-            health = 100;
+
             dialog = " LOOK A LONG STRING OF TEXT AND STUFF";
         }
 
@@ -51,7 +50,7 @@ namespace BossJam
             mWorldHandler.Update(lGameTime);
 
             //REMOVE LATER
-            health -= 0.1f;
+
         }
 
         public override void Draw(SpriteBatch lSpriteBatch)
@@ -71,15 +70,15 @@ namespace BossJam
 
             lSpriteBatch.Begin();
             //Health color change
-            if (health > 10)
+            if (Player.GetPlayer().GetHealth() > 10)
             {
-                mHealthColor.R = (byte)(255 - 2.5f * health + 20);
-                mHealthColor.G = (byte)(2.5 * health - 20);
+                mHealthColor.R = (byte)(255 - 2.5f * Player.GetPlayer().GetHealth() + 20);
+                mHealthColor.G = (byte)(2.5 * Player.GetPlayer().GetHealth() - 20);
             }
 
             //lSpriteBatch.Draw(mUITexture, new Rectangle(0, 0, 1024, 768), null, Color.White, 0.0f, Vector2.Zero, SpriteEffects.None, 0.0f);
 
-            lSpriteBatch.DrawString(spriteFont, "Health: " + (int)health,new Vector2(305,20), mHealthColor);
+            lSpriteBatch.DrawString(spriteFont, "Health: " + Player.GetPlayer().GetHealth(),new Vector2(305,20), mHealthColor);
 
             lSpriteBatch.DrawString(spriteFont, "Crit chance: 100%", new Vector2(500, 20), Color.GhostWhite);
 
