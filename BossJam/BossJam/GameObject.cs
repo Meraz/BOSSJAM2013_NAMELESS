@@ -43,8 +43,8 @@ namespace BossJam
 
         public virtual void Update(GameTime lGameTime)
         {
-            mRect.X = (int)mPos.X;
-            mRect.Y = (int)mPos.Y;
+           // mRect.X = (int)mPos.X;
+           // mRect.Y = (int)mPos.Y;
         }
 
         public virtual void Draw(SpriteBatch lSpriteBatch)

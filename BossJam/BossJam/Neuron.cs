@@ -12,7 +12,7 @@ namespace BossJam
         public Neuron()
         {
             mDmg = 2;
-            mSpeed = 0.1f;
+            mSpeed = 0.2f;
             mAttackCooldown = 5.0f;
         }
 
