@@ -37,6 +37,7 @@ namespace BossJam
 
             mScreenHandler.Initialize(Content, GraphicsDevice);
 
+            FileReader.GetFileReader().ReadFile("sdf","ty");
 
         }
 

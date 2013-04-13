@@ -12,44 +12,58 @@ namespace BossJam
     {
         static private FileReader mFileReader = new FileReader();
         private string mFile;
+        //private float [,]verts = new float[*];
+        private string tempLoad;
+        List<float> vertX;
+        List<float> vertY;
+        List<float> vertID;
 
         private FileReader()
         {
+            vertX = new List<float>();
+            vertY = new List<float>();
+            vertID = new List<float>();
         }
 
         public static FileReader GetFileReader()
         {
             return mFileReader;
+
         }
 
         public void ReadFile(string fileName, string fileType)
         {
+            
 	        //Filnamn
             mFile = fileName + fileType;
-
+            mFile = "random.txt";
             FileStream levelFile = new FileStream(mFile, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
             StreamReader sReader = new StreamReader(levelFile);
 
-            string reader = sReader.ReadToEnd();
-
-            //Save for later
-            //mLadda = laser.ReadLine();
-
-            ////Ladda slut position för banan
-            //mLadda = laser.ReadLine();
-            //LEVEL_END.X = float.Parse(mLadda);
-            //mLadda = laser.ReadLine();
-            //LEVEL_END.Y = float.Parse(mLadda);
 
 
-            ////ladda in nya punkter och ersätt
-            //for fixslutetavfil
-            //{
-            //    mLadda = laser.ReadLine();
-            //    LEVELVECTOR.X = float.Parse(mLadda);
-            //    mLadda = laser.ReadLine();
-            //    LEVELVECTOR.Y = float.Parse(mLadda);
-            //}
+            int i = 0;
+            do
+            {
+                if (!sReader.EndOfStream)
+                {
+                    tempLoad = sReader.ReadLine();
+                    vertX.Add(float.Parse(tempLoad));
+                }
+                if (!sReader.EndOfStream)
+                {
+                    tempLoad = sReader.ReadLine();
+                    vertY.Add(float.Parse(tempLoad));
+                }
+                if (!sReader.EndOfStream)
+                {
+                    tempLoad = sReader.ReadLine();
+                    vertID.Add(float.Parse(tempLoad));
+                }
+
+            }
+            while (!sReader.EndOfStream);
+
 
             //stäng fil
             sReader.Close();
