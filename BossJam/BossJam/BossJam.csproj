@@ -114,6 +114,7 @@
     <Compile Include="AudioHandler.cs" />
     <Compile Include="BearTrapBrain.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="CollisionHandler.cs" />
     <Compile Include="EmptyObject.cs" />
     <Compile Include="EndScreen.cs" />
     <Compile Include="FileReader.cs" />

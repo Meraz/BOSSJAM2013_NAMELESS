@@ -19,23 +19,10 @@ namespace BossJam
         public float Rotation { get; set; }
         private Rectangle Limit { get; set; }
         private Viewport viewPort;
-        private Vector2 pPosition;
         private float speed = 10;
 
-        public Vector2 Position
-        {
+        public Vector2 Position;
 
-            get { return pPosition; }
-            set
-            {
-                pPosition = value;
-                if (Limit != null)
-                {
-                    pPosition.X = MathHelper.Clamp(pPosition.X, ((Rectangle)Limit).X, Origin.X + 1725);          //((Rectangle)Limit).Width  Kollar så att kameran håller sig innan för sin max och min-gräns
-                    pPosition.Y = MathHelper.Clamp(pPosition.Y, ((Rectangle)Limit).Y, Origin.Y + 2000);         //((Rectangle)Limit).Height
-                }
-            }
-        }
 
         public Camera(Viewport viewPort, Rectangle limit)
         {
@@ -58,10 +45,30 @@ namespace BossJam
         public virtual void Update(GameTime timeTime)
         {
             KeyboardState ks = Keyboard.GetState();
-
+            if (ks.IsKeyDown(Keys.Right))
+            {
+                if (!(Position.X + viewPort.Width + speed > Limit.Width))
+                    Position.X += speed;
+            }
+            if (ks.IsKeyDown(Keys.Left))
+            {
+                if (!(Position.X -speed < 0))
+                    Position.X -= speed;
+            }
+            if (ks.IsKeyDown(Keys.Up))
+            {
+                if (!(Position.Y - speed < 0))
+                    Position.Y -= speed;
+            }
+            if (ks.IsKeyDown(Keys.Down))
+            {
+                if (!(Position.Y + viewPort.Height + speed > Limit.Height))
+                    Position.Y += speed;
+            }
             Position = new Vector2(
                 Player.GetPlayer().GetPos().X - 512.0f, // Hårdkodning för hårdkodningens skull
                 Player.GetPlayer().GetPos().Y - 384.0f);
+
 
             Matrix.CreateTranslation(Position.X, Position.Y, 0f);
         }

@@ -65,8 +65,6 @@ namespace BossJam
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
             mScreenHandler.Draw(spriteBatch);
             base.Draw(gameTime);
         }

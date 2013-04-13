@@ -1,7 +1,9 @@
 BossJam\BossJam\bin\*
 BossJam\BossJam\bin\obj\*
+BossJam\obj\*
 BossJam\BossJamContent\bin\*
 BossJam\BossJamContent\bin\obj\*
 *.exe
 *.pdb
 *.cache
+*.xnb

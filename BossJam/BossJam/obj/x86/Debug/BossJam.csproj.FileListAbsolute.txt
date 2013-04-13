@@ -1,9 +1,7 @@
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Chrysanthemum.xnb
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Error.xnb
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp.xnb
-C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp2.xnb
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Block.xnb
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Player_PH.xnb
 C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Airport_PH.xnb
