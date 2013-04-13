@@ -33,7 +33,7 @@ namespace BossJam
             base.Initialize();
             TextureHandler.GetTextureHandler().Initialize(Content);
             AudioHandler.GetAudioHandler().Initialize(Content);
-            Player.GetPlayer().Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.PLAYER), new Vector2(512.0f, 384.0f));
+            Player.GetPlayer().Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.PLAYER), new Vector2(512.0f, 2250));
 
             mScreenHandler.Initialize(Content, GraphicsDevice);
 

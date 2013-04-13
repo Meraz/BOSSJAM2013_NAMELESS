@@ -7,3 +7,4 @@ BossJam\BossJamContent\bin\obj\*
 *.pdb
 *.cache
 *.xnb
+*.pdb

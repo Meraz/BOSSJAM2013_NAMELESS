@@ -19,7 +19,10 @@ namespace BossJam
         };
 
         private const int MaxPLayerSpeed = 100;
-        private float mJumpSpeed = 5;
+        public const float PlayerWidth = 100;
+        public const float PlayerHeigth = 100;
+
+        private float mJumpSpeed = 0.1f;
         private float mPlayerGravity = 0.01f;
         
         private PlayerState mPlayerState;
@@ -27,12 +30,11 @@ namespace BossJam
         private bool mHitX;
         private bool mHitY;
         static private Player mPlayer = new Player();
-        
-
 
         Vector2 mOldMousePos;
         double mRotation;
         private bool mJumpAllowed;
+
         public static Player GetPlayer()
         {
             return mPlayer;
@@ -51,6 +53,7 @@ namespace BossJam
             mOldMousePos.Y = Mouse.GetState().Y;
             mHitX = false;
             mHitY = false;
+            mJumpAllowed = true;
 
            // CalcRotation();
         }
@@ -89,16 +92,16 @@ namespace BossJam
         {
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
-                mDir.X = -1 * lGameTime.ElapsedGameTime.Milliseconds;
+                mDir.X = -0.4f * lGameTime.ElapsedGameTime.Milliseconds;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
-                mDir.X = 1 * lGameTime.ElapsedGameTime.Milliseconds;
+                mDir.X = 0.4f * lGameTime.ElapsedGameTime.Milliseconds;
             }
             
             if (mPlayerState == PlayerState.AIR)
             {
-                mDir.Y += mPlayerGravity;
+                mDir.Y += mPlayerGravity * lGameTime.ElapsedGameTime.Milliseconds;
             }
 
             if (mDir.X > 0)				//Röra sig mot noll
@@ -106,38 +109,31 @@ namespace BossJam
             else if (mDir.X < 0)
                 mDir.X += 0.2f * lGameTime.ElapsedGameTime.Milliseconds;
 
-            //if (mHitX)
-            //    mDir.X = 0;
-            //if (mHitY)
-            //    mDir.Y = 0;
-
-            //if (mDir.X > MaxPLayerSpeed)
-            //    mDir.X = MaxPLayerSpeed;
-            //if (mDir.X < 0)
-            //    mDir.X = 0;
+            if (mDir.X > -0.1f && mDir.X < 0.1f)
+                mDir.X = 0;
 
             if (mPlayerState == PlayerState.GROUND)
             {
                 if (mJumpAllowed && Keyboard.GetState().IsKeyDown(Keys.Space))
                 {
-                    mDir.Y += mJumpSpeed*lGameTime.ElapsedGameTime.Milliseconds; 
-
+                    mDir.Y -= mJumpSpeed*lGameTime.ElapsedGameTime.Milliseconds;
+                    mPlayerState = PlayerState.AIR;
+                    mJumpAllowed = false;
                 }
-
             }
+
+            if (mHitX)
+                mDir.X = 0;
+            if (mHitY)
+                mDir.Y = 0;
+            
+
 
             mPos.X += mDir.X;
             mPos.Y += mDir.Y;
 
             mHitX = false;
             mHitY = false;
-
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Space) && mPlayerState == PlayerState.GROUND)
-            {
-                mDir.Y = -1;
-                mPlayerState = PlayerState.AIR;
-            }
         }
 
         private void CalcRotation(GameTime lGameTime)
@@ -156,15 +152,36 @@ namespace BossJam
 
         }
 
-        public void SetCollision()
+        public void HitBot()
         {
+            mHitY = true;
+            mPlayerState = PlayerState.GROUND;
+            mJumpAllowed = true;
+        }
+
+        public void HitTop()
+        {
+            mHitY = true;
+        }
+
+        public void HitLeft()
+        {
+            mHitX = true;
 
         }
 
-        public void GetNextPosition(float dt)
+        public void HitRight()
+        {
+            mHitX = true;
+        }
+
+        public Vector2 GetNextPosition(GameTime lGameTime)
         {
             Vector2 lVector;
-           // lVector.X = mPos
+
+            lVector.X = mPos.X + mDir.X * lGameTime.ElapsedGameTime.Milliseconds;
+            lVector.Y = mPos.Y + mDir.Y * lGameTime.ElapsedGameTime.Milliseconds;
+            return lVector; 
         }
     }
 }

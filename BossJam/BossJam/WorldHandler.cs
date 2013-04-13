@@ -63,10 +63,10 @@ namespace BossJam
 
             int a, b, c, d, e;
             Vector2 lPos = Player.GetPlayer().GetPos();
-            int lPosX = ((int)lPos.X + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
-            int lPosY = ((int)lPos.Y + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
-                 
-            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX-1,       lPosY+1]);
+            int x = ((int)lPos.X + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
+            int y = ((int)lPos.Y + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
+            
+            
             //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX-1,       lPosY]);
             //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX-1,       lPosY-1]); //Left three
 
@@ -74,10 +74,37 @@ namespace BossJam
             //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX,         lPosY-1]);
 
             //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX+1,       lPosY+1]);
-            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX+1,       lPosY]);
+            //
             //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX+1,       lPosY-1]); //Right three
 
-            int aaaa;
+            if (y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
+		        CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x,         y+1], lGameTime);   //Down
+
+            if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX)
+                CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y], lGameTime);         //Right
+
+            if (y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
+                CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x, y - 1], lGameTime);         //Up
+            if (x - 1 >= 0 && x + 1 < WorldConstants.WorldSizeX)
+                CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x - 1, y], lGameTime);         //Left
+
+            if (x - 1 >= 0 && x - 1 < WorldConstants.WorldSizeX &&
+               y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
+                CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x - 1, y + 1], lGameTime);     //Downleft
+            
+            if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX &&
+               y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
+                CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y + 1], lGameTime);     //DownRight
+
+            if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX &&
+               y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
+                CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y - 1], lGameTime); //UpRight
+
+
+            if (x - 1 >= 0 && x - 1 < WorldConstants.WorldSizeX &&
+               y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
+                CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x - 1, y - 1], lGameTime); //Upleft
+
         }
 
         public void Draw(SpriteBatch lSpriteBatch)
