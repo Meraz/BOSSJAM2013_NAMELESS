@@ -22,9 +22,9 @@ namespace BossJam
         public const float PlayerWidth = 100;
         public const float PlayerHeigth = 100;
 
-        private float mJumpSpeed = 0.1f;
+        private float mJumpSpeed = 500;
         private const int MaxPlayerSpeed = 100;
-        private float mPlayerGravity = 0.01f;
+        private float mPlayerGravity = 5;
         
         private PlayerState mPlayerState;
         private PlayerView mPV = new PlayerView();
@@ -37,6 +37,7 @@ namespace BossJam
         Vector2 mOldMousePos;
         double mRotation;
         private bool mJumpAllowed;
+        int dt;
 
         public static Player GetPlayer()
         {
@@ -45,6 +46,7 @@ namespace BossJam
 
         private Player()
         {
+           
             mHealth = 100;
             mSpeed = 0.5f;
             mDmg = 10;
@@ -91,11 +93,43 @@ namespace BossJam
         public override void Initialize(Texture2D lTex, Vector2 lPos)
         {
             base.Initialize(lTex, lPos);
+            TextureColors = new Color[lTex.Width * lTex.Height]; //Antalet pixlar
+
+            mTex.GetData(TextureColors);
         }
 
         public override void Update(GameTime lGameTime)
         {
             base.Update(lGameTime);
+        }
+
+        public void UpdateInfo(GameTime lGameTime)
+        {
+            dt = lGameTime.ElapsedGameTime.Milliseconds;
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                mDir.X = -500.0f * (float)lGameTime.ElapsedGameTime.TotalSeconds;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                mDir.X = 500.0f * (float)lGameTime.ElapsedGameTime.TotalSeconds;
+            }
+            else
+                mDir.X = 0;
+
+            if (mPlayerState == PlayerState.GROUND)
+            {
+                if (mJumpAllowed && Keyboard.GetState().IsKeyDown(Keys.Space))
+                {
+                    mDir.Y -= mJumpSpeed * (float)lGameTime.ElapsedGameTime.TotalSeconds;
+                    mPlayerState = PlayerState.AIR;
+                    mJumpAllowed = false;
+                }
+            }
+            if (mPlayerState == PlayerState.AIR)
+            {
+                mDir.Y += mPlayerGravity * (float)lGameTime.ElapsedGameTime.TotalSeconds;
+            }
         }
 
         public override void Draw(SpriteBatch lSpriteBatch)
@@ -110,43 +144,13 @@ namespace BossJam
 
         protected override void Move(GameTime lGameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.A))
-            {
-                mDir.X = -0.4f * lGameTime.ElapsedGameTime.Milliseconds;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
-            {
-                mDir.X = 0.4f * lGameTime.ElapsedGameTime.Milliseconds;
-            }
+            //if (mDir.X > -0.1f && mDir.X < 0.1f)
+            //    mDir.X = 0;
             
-            if (mPlayerState == PlayerState.AIR)
-            {
-                mDir.Y += mPlayerGravity * lGameTime.ElapsedGameTime.Milliseconds;
-            }
-
-            if (mDir.X > 0)				//Röra sig mot noll
-                mDir.X -= 0.2f * lGameTime.ElapsedGameTime.Milliseconds;
-            else if (mDir.X < 0)
-                mDir.X += 0.2f * lGameTime.ElapsedGameTime.Milliseconds;
-
-            if (mDir.X > -0.1f && mDir.X < 0.1f)
-                mDir.X = 0;
-
-            if (mPlayerState == PlayerState.GROUND)
-            {
-                if (mJumpAllowed && Keyboard.GetState().IsKeyDown(Keys.Space))
-                {
-                    mDir.Y -= mJumpSpeed*lGameTime.ElapsedGameTime.Milliseconds;
-                    mPlayerState = PlayerState.AIR;
-                    mJumpAllowed = false;
-                }
-            }
-
             if (mHitX)
                 mDir.X = 0;
             if (mHitY)
-                mDir.Y = 0;
-            
+                mDir.Y = 0;           
 
 
             mPos.X += mDir.X;
@@ -177,6 +181,8 @@ namespace BossJam
             mHitY = true;
             mPlayerState = PlayerState.GROUND;
             mJumpAllowed = true;
+            if (mDir.Y > 0)
+                mDir.Y = 0;
         }
 
         public void HitTop()
@@ -198,9 +204,9 @@ namespace BossJam
         public Vector2 GetNextPosition(GameTime lGameTime)
         {
             Vector2 lVector;
-
-            lVector.X = mPos.X + mDir.X * lGameTime.ElapsedGameTime.Milliseconds;
-            lVector.Y = mPos.Y + mDir.Y * lGameTime.ElapsedGameTime.Milliseconds;
+            lVector = new Vector2(mPos.X, mPos.Y);
+            lVector.X += mDir.X;
+            lVector.Y += mDir.Y;
             return lVector; 
         }
 

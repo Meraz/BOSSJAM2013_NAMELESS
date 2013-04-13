@@ -15,8 +15,8 @@ namespace BossJam
 
     abstract class GameObject
     {
-        public Color[] TextureColors { private set; get; } //Property som håller pixlarna
-        protected Texture2D mTex;
+        public Color[] TextureColors; //Property som håller pixlarna
+        public Texture2D mTex;
         protected Vector2 mPos;
         protected Rectangle mRect;
 

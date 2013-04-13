@@ -36,7 +36,7 @@ namespace BossJam
                 mAnimDims.X = mTex.Width / mMaxAnim;
             }
             mAnimDims.Y = mTex.Height;
-            mRect = new Rectangle((int)mPos.X, (int)mPos.Y, mAnimDims.X, mAnimDims.Y);
+            //mRect = new Rectangle((int)mPos.X, (int)mPos.Y, mAnimDims.X, mAnimDims.Y);
         }
 
         public override void Update(GameTime lGameTime)

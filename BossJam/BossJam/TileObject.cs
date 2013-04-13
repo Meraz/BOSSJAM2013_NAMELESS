@@ -23,11 +23,9 @@ namespace BossJam
         public override void Initialize(Texture2D lTex, Vector2 lPos)
         {
             base.Initialize(lTex, lPos);
-            //TextureColors = new Color[lTex.Width.X * SpriteSize.Y]; //Antalet pixlar
-            //mTex.GetData(GetData(0, new Rectangle(0, 0, SpriteSize.X, SpriteSize.Y),
-            //TextureColors,
-            //0,
-            //TextureColors.Length); 
+            TextureColors = new Color[lTex.Width * lTex.Height]; //Antalet pixlar
+
+            mTex.GetData(TextureColors);
         }
 
         public override void Update(GameTime lGameTime)
