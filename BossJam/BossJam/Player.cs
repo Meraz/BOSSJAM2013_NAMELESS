@@ -31,6 +31,8 @@ namespace BossJam
         private bool mHitY;
         static private Player mPlayer = new Player();
 
+        private int mPlayerAttackCooldown;
+
         Vector2 mOldMousePos;
         double mRotation;
         private bool mJumpAllowed;
@@ -55,6 +57,8 @@ namespace BossJam
             mHitY = false;
             mJumpAllowed = true;
 
+
+            mPlayerAttackCooldown = 0;
            // CalcRotation();
         }
 
@@ -182,6 +186,43 @@ namespace BossJam
             lVector.X = mPos.X + mDir.X * lGameTime.ElapsedGameTime.Milliseconds;
             lVector.Y = mPos.Y + mDir.Y * lGameTime.ElapsedGameTime.Milliseconds;
             return lVector; 
+        }
+
+        public void SetHealth(int Health)
+        {
+            mHealth += Health;
+        }
+
+
+        public int GetHealth()
+        {
+            return mHealth;
+        }
+
+        protected override void Attack()
+        {
+
+            if (Keyboard.GetState().IsKeyDown(Keys.E) && mPlayerAttackCooldown == 0)
+            {    
+                mPlayerAttackCooldown++;
+            }
+            else if (mPlayerAttackCooldown != 0)
+            {
+                mPlayerAttackCooldown++;
+            }
+
+
+            if (mPlayerAttackCooldown == 50)
+            {
+                //check enemies list
+
+
+            }
+            else if (mPlayerAttackCooldown == 100)
+            {
+                mPlayerAttackCooldown = 0;
+            }
+         
         }
     }
 }
