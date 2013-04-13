@@ -30,10 +30,6 @@ namespace BossJam
             base.Draw(lSpriteBatch);
         }
 
-        public void SetPlayerPos(Vector2 playerPos)
-        {
-            mPlayerPos = playerPos;
-        }
 
         protected override void Move()
         {
@@ -46,6 +42,14 @@ namespace BossJam
                 mPos.Y += mSpeed;
             else
                 mPos.Y += mSpeed * -1;
+
+
+            if (Vector2.Distance(mPos, mPlayerPos) < 50.0f)
+            {
+                //Attack function
+
+
+            }
         }
     }
 }

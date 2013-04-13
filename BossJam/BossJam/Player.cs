@@ -58,17 +58,6 @@ namespace BossJam
         protected override void Move()
         {
             
-            
-            //if (Keyboard.GetState().IsKeyDown(Keys.W))
-            //{
-            //    mPos.Y += mSpeed * -1;
-            //}
-            //if (Keyboard.GetState().IsKeyDown(Keys.S))
-            //{
-            //    mPos.Y += mSpeed;
-            //}
-
-
             if (mPlayerState == PlayerState.AIR)
             {
                 mDir.Y += mPlayerGravity;

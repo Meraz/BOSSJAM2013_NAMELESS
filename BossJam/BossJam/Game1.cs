@@ -67,6 +67,10 @@ namespace BossJam
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             mScreenHandler.Draw(spriteBatch);
+
+
+
+
             base.Draw(gameTime);
         }
     }
