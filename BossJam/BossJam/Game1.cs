@@ -17,6 +17,7 @@ namespace BossJam
         SpriteBatch spriteBatch;
         ScreenHandler mScreenHandler;
 
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);

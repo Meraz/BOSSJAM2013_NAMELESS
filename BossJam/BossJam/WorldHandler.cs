@@ -60,6 +60,24 @@ namespace BossJam
         {
             mCamera.Update(lGameTime);
             Player.GetPlayer().Update(lGameTime);
+
+            int a, b, c, d, e;
+            Vector2 lPos = Player.GetPlayer().GetPos();
+            int lPosX = ((int)lPos.X + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
+            int lPosY = ((int)lPos.Y + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
+                 
+            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX-1,       lPosY+1]);
+            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX-1,       lPosY]);
+            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX-1,       lPosY-1]); //Left three
+
+            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX,         lPosY+1);
+            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX,         lPosY-1]);
+
+            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX+1,       lPosY+1]);
+            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX+1,       lPosY]);
+            //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX+1,       lPosY-1]); //Right three
+
+            int aaaa;
         }
 
         public void Draw(SpriteBatch lSpriteBatch)

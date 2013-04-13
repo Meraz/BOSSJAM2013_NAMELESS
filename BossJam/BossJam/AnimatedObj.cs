@@ -32,7 +32,7 @@ namespace BossJam
         public override void Update(GameTime lGameTime)
         {
             base.Update(lGameTime);
-            Move();
+            Move(lGameTime);
         }
 
         public override void Draw(SpriteBatch lSpriteBatch)
@@ -40,6 +40,6 @@ namespace BossJam
             base.Draw(lSpriteBatch);
         }
 
-        protected abstract void Move();
+        protected abstract void Move(GameTime lGameTime);
     }
 }
