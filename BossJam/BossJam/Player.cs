@@ -29,10 +29,10 @@ namespace BossJam
         static private Player mPlayer = new Player();
         
 
+
         Vector2 mOldMousePos;
         double mRotation;
         private bool mJumpAllowed;
-
         public static Player GetPlayer()
         {
             return mPlayer;
@@ -41,7 +41,7 @@ namespace BossJam
         private Player()
         {
             mHealth = 100;
-            mSpeed = 4.0f;
+            mSpeed = 0.5f;
             mDmg = 10;
             mDir = new Vector2(0,0);
             
@@ -52,12 +52,17 @@ namespace BossJam
             mHitX = false;
             mHitY = false;
 
-            CalcRotation();
+           // CalcRotation();
         }
 
         public Vector2 GetPos()
         {
             return mPos;
+        }
+
+        public Vector2 GetDir()
+        {
+            return mDir;
         }
 
         public override void Initialize(Texture2D lTex, Vector2 lPos)
@@ -74,12 +79,10 @@ namespace BossJam
         {
             base.Draw(lSpriteBatch);
 
-            if (mOldMousePos.X != Mouse.GetState().X || mOldMousePos.X != Mouse.GetState().Y)
-            {
-                CalcRotation();
-            }
-
-            mPV.Draw(lSpriteBatch, mRect, (float)mRotation);
+            if(mDir.X < 0)
+                mPV.Draw(lSpriteBatch, mRect, (float)Math.PI);
+            else
+                mPV.Draw(lSpriteBatch, mRect, 0.0f);
         }
 
         protected override void Move(GameTime lGameTime)
@@ -118,7 +121,9 @@ namespace BossJam
                 if (mJumpAllowed && Keyboard.GetState().IsKeyDown(Keys.Space))
                 {
                     mDir.Y += mJumpSpeed*lGameTime.ElapsedGameTime.Milliseconds; 
+
                 }
+
             }
 
             mPos.X += mDir.X;
@@ -135,7 +140,7 @@ namespace BossJam
             }
         }
 
-        private void CalcRotation()
+        private void CalcRotation(GameTime lGameTime)
         {
             double xLength = mPos.X - Mouse.GetState().X;
             double yLength = mPos.Y - Mouse.GetState().Y;
@@ -146,6 +151,9 @@ namespace BossJam
             double totLength = Math.Sqrt(xSquared + ySquared);
 
             mRotation = Math.Asin(yLength / totLength);
+
+            mPos += mDir * mSpeed * lGameTime.ElapsedGameTime.Milliseconds;
+
         }
 
         public void SetCollision()
