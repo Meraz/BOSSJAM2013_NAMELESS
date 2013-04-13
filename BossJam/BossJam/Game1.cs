@@ -17,7 +17,6 @@ namespace BossJam
         SpriteBatch spriteBatch;
         ScreenHandler mScreenHandler;
 
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -34,10 +33,9 @@ namespace BossJam
             TextureHandler.GetTextureHandler().Initialize(Content);
             AudioHandler.GetAudioHandler().Initialize(Content);
             Player.GetPlayer().Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.PLAYER), new Vector2(512.0f, 2250));
+            FileReader.GetFileReader().ReadFile("random", ".txt");
 
             mScreenHandler.Initialize(Content, GraphicsDevice);
-
-
         }
 
         protected override void LoadContent()
@@ -67,9 +65,6 @@ namespace BossJam
         protected override void Draw(GameTime gameTime)
         {
             mScreenHandler.Draw(spriteBatch);
-
-
-
 
             base.Draw(gameTime);
         }

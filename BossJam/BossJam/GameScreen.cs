@@ -40,7 +40,7 @@ namespace BossJam
 
             //REMOVE LATER
 
-            dialog = " LOOK A LONG STRING OF TEXT AND STUFF";
+            dialog = "LOOK A LONG STRING OF TEXT AND STUFF";
         }
 
         public override void Update(GameTime lGameTime)
@@ -77,8 +77,6 @@ namespace BossJam
                 mHealthColor.G = (byte)(2.5 * Player.GetPlayer().GetHealth() - 20);
             }
             //lSpriteBatch.Draw(mUITexture, new Rectangle(0, 0, 1024, 768), null, Color.White, 0.0f, Vector2.Zero, SpriteEffects.None, 0.0f);
-
-            lSpriteBatch.DrawString(spriteFont, "Health: " + Player.GetPlayer().GetHealth(),new Vector2(305,20), mHealthColor);
 
             if (Player.GetPlayer().Dead())
                 lSpriteBatch.DrawString(spriteFont, "YOU DIED MOFO!", new Vector2(305, 20), Color.OrangeRed);
