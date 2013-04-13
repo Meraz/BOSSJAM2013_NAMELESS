@@ -35,17 +35,17 @@ namespace BossJam
             mPlayerPos = playerPos;
         }
 
-        protected override void Move()
+        protected override void Move(GameTime lGameTime)
         {
             if (mPlayerPos.X > mPos.X)
-                mPos.X += mSpeed;
+                mPos.X += mSpeed * lGameTime.ElapsedGameTime.Milliseconds;
             else
-                mPos.X += mSpeed * -1;
+                mPos.X += mSpeed * -1 * lGameTime.ElapsedGameTime.Milliseconds;
 
             if (mPlayerPos.Y > mPos.Y)
-                mPos.Y += mSpeed;
+                mPos.Y += mSpeed * lGameTime.ElapsedGameTime.Milliseconds;
             else
-                mPos.Y += mSpeed * -1;
+                mPos.Y += mSpeed * -1 * lGameTime.ElapsedGameTime.Milliseconds;
         }
     }
 }
