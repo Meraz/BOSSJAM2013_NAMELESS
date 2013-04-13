@@ -60,7 +60,7 @@ namespace BossJam
             mHitY = false;
             mJumpAllowed = true;
 
-            mMaxAnim = 1;
+            mMaxAnim = 46;
 
             mPlayerAttackCooldown = 0;
         }
@@ -109,10 +109,24 @@ namespace BossJam
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 mDir.X = -500.0f * (float)lGameTime.ElapsedGameTime.TotalSeconds;
+                mEffect = SpriteEffects.None;
+                if (mCurrAnim == mMaxAnim)
+                {
+                    mCurrAnim = 0;
+                }
+                else
+                    mCurrAnim++;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 mDir.X = 500.0f * (float)lGameTime.ElapsedGameTime.TotalSeconds;
+                mEffect = SpriteEffects.FlipHorizontally;
+                if (mCurrAnim == mMaxAnim)
+                {
+                    mCurrAnim = 0;
+                }
+                else
+                    mCurrAnim++;
             }
             else
                 mDir.X = 0;
@@ -136,15 +150,12 @@ namespace BossJam
         {
             base.Draw(lSpriteBatch);
 
-            if(mDir.X < 0)
-                mPV.Draw(lSpriteBatch, mRect, (float)Math.PI);
-            else
-                mPV.Draw(lSpriteBatch, mRect, 0.0f);
+            //if(mDir.X < 0)
+            //    mPV.Draw(lSpriteBatch, mRect, (float)Math.PI);
+            //else
+            //    mPV.Draw(lSpriteBatch, mRect, 0.0f);
 
-            lSpriteBatch.Draw(mTex,
-                mPos,
-                mRect,
-                Color.White);
+            lSpriteBatch.Draw(mTex, mPos, mRect, Color.White, 0f, Vector2.Zero, 1.0f, mEffect, 0f);
         }
 
         

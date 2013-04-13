@@ -117,6 +117,7 @@
     <Compile Include="CollisionHandler.cs" />
     <Compile Include="EmptyObject.cs" />
     <Compile Include="EndScreen.cs" />
+    <Compile Include="EnemyHandler.cs" />
     <Compile Include="FileReader.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameScreen.cs" />

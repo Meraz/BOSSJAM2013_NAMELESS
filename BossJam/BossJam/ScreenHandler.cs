@@ -68,10 +68,6 @@ namespace BossJam
                 mScreen = mGameScreen;
             else if (lScreenState == ScreenState.End)
                 mScreen = mEndScreen;
-            //else if (lScreenState == ScreenState.Shutdown)
-            //{
-
-            //}
             else
                 return;
             mCurrentScreenState = lScreenState;

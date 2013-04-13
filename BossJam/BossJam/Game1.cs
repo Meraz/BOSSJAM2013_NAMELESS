@@ -30,8 +30,8 @@ namespace BossJam
         protected override void Initialize()
         {
             base.Initialize();
-            TextureHandler.GetTextureHandler().Initialize(Content);
             AudioHandler.GetAudioHandler().Initialize(Content);
+            TextureHandler.GetTextureHandler().Initialize(Content);
             Player.GetPlayer().Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.PLAYER), new Vector2(512.0f, 2250));
 
             mScreenHandler.Initialize(Content, GraphicsDevice);

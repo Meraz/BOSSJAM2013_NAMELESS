@@ -19,6 +19,8 @@ namespace BossJam
         protected int mCurrAnim = 0;
         protected int mMaxX;
 
+        protected SpriteEffects mEffect = SpriteEffects.None;
+
         public AnimatedObj()
         {
             mSpeed = 0.0f;
@@ -32,24 +34,14 @@ namespace BossJam
         {
             base.Initialize(lTex, lPos);
 
-            //if (mMaxAnim > 0)
-            //{
-            //    mAnimDims.X = mTex.Width / mMaxAnim;
-            //}
-            //mAnimDims.Y = mTex.Height;
-            ////mRect = new Rectangle((int)mPos.X, (int)mPos.Y, mAnimDims.X, mAnimDims.Y);
-
             mMaxX = mTex.Width / mMaxAnim;
         }
 
         public override void Update(GameTime lGameTime)
         {
             Move(lGameTime);
-
-            mRect = new Rectangle(mMaxX * mCurrAnim,
-            0,
-            mMaxX,
-            mTex.Height);
+            mRect.X = (int)mPos.X;
+            mRect.Y = (int)mPos.Y;
         }
 
         public override void Draw(SpriteBatch lSpriteBatch)

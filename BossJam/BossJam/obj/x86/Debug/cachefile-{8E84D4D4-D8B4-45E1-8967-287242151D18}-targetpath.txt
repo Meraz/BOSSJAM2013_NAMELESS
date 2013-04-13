@@ -7,3 +7,6 @@ Content\Images\Beartrap_PH.xnb
 Content\Images\UI_Overlay.xnb
 Content\Images\Neuron.xnb
 Content\SpriteFont1.xnb
+Content\Images\BeartrapBrain.xnb
+Content\Images\Endscreen.xnb
+Content\Images\gubbe.xnb
