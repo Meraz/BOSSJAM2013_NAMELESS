@@ -11,6 +11,7 @@ namespace BossJam
     {
         public Neuron()
         {
+            mAttackCooldown = 5.0f;
         }
 
         public override void Initialize(Texture2D lTex, Vector2 lPos)

@@ -18,7 +18,7 @@ namespace BossJam
             JUMP
         };
 
-        private const int MaxPLayerSpeed = 100;
+        private const int MaxPlayerSpeed = 100;
         private float mJumpSpeed = 5;
         private float mPlayerGravity = 0.01f;
         
@@ -27,12 +27,11 @@ namespace BossJam
         private bool mHitX;
         private bool mHitY;
         static private Player mPlayer = new Player();
-        
-
 
         Vector2 mOldMousePos;
         double mRotation;
         private bool mJumpAllowed;
+
         public static Player GetPlayer()
         {
             return mPlayer;
@@ -55,6 +54,11 @@ namespace BossJam
            // CalcRotation();
         }
 
+        public Boolean Dead()
+        {
+            return mHealth <= 0;
+        }
+
         public Vector2 GetPos()
         {
             return mPos;
@@ -64,6 +68,16 @@ namespace BossJam
         {
             return mDir;
         }
+
+        public int GetHealth()
+        {
+            return mHealth;
+        }
+
+        public void Damage(int DMG)
+        {
+            mHealth += DMG;
+        }       
 
         public override void Initialize(Texture2D lTex, Vector2 lPos)
         {

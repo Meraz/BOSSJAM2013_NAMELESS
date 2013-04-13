@@ -28,7 +28,6 @@ namespace BossJam
         {
             base.Update(lGameTime);
             Console.WriteLine("EndScreen"); 
-
         }
 
         public override void Draw(SpriteBatch lSpriteBatch)

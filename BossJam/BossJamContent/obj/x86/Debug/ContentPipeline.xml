@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Error.xnb</Output>
-      <Time>2013-04-12T23:13:45.8350044+02:00</Time>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Error.xnb</Output>
+      <Time>2013-04-12T21:47:06.7252446+02:00</Time>
     </Item>
     <Item>
       <Source>Images\Lamp.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp.xnb</Output>
-      <Time>2013-04-13T02:18:58.4376089+02:00</Time>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp.xnb</Output>
+      <Time>2013-04-13T02:38:39.8016754+02:00</Time>
     </Item>
     <Item>
       <Source>Images\Block.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Block.xnb</Output>
-      <Time>2013-04-13T02:18:46.1819079+02:00</Time>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Block.xnb</Output>
+      <Time>2013-04-12T23:35:15.9892865+02:00</Time>
     </Item>
     <Item>
       <Source>Images\Player_PH.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Player_PH.xnb</Output>
-      <Time>2013-04-13T02:18:46.1879083+02:00</Time>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Player_PH.xnb</Output>
+      <Time>2013-04-12T23:35:15.9922855+02:00</Time>
     </Item>
     <Item>
       <Source>Images\Airport_PH.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Airport_PH.xnb</Output>
-      <Time>2013-04-13T02:18:46.1809079+02:00</Time>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Airport_PH.xnb</Output>
+      <Time>2013-04-12T23:35:15.9862811+02:00</Time>
     </Item>
     <Item>
       <Source>Images\Beartrap_PH.png</Source>
@@ -52,17 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Beartrap_PH.xnb</Output>
-      <Time>2013-04-13T02:18:46.1809079+02:00</Time>
-    </Item>
-    <Item>
-      <Source>Images\Neuron_PH.png</Source>
-      <Name>Images\Neuron_PH</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Neuron_PH.xnb</Output>
-      <Time>2013-04-13T02:18:46.182908+02:00</Time>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Beartrap_PH.xnb</Output>
+      <Time>2013-04-12T23:35:15.9882867+02:00</Time>
     </Item>
     <Item>
       <Source>Images\UI_Overlay.png</Source>
@@ -70,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\UI_Overlay.xnb</Output>
-      <Time>2013-04-13T02:18:58.4376089+02:00</Time>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\UI_Overlay.xnb</Output>
+      <Time>2013-04-13T02:38:39.8036755+02:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -79,8 +70,17 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2013-04-13T02:18:58.438609+02:00</Time>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2013-04-13T02:38:39.8066779+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Neuron.png</Source>
+      <Name>Images\Neuron</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Neuron.xnb</Output>
+      <Time>2013-04-13T03:59:51.012339+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -88,10 +88,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJamContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJamContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJamContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJamContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Gnidleif\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -119,8 +119,8 @@
         <Value>2010-08-23T12:41:18+02:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-04-12T00:13:10.8462483+02:00</Value>
+        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-04-11T12:49:38.0115844+02:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

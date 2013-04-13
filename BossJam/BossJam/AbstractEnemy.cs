@@ -10,9 +10,12 @@ namespace BossJam
     abstract class AbstractEnemy : AnimatedObj
     {
         protected Vector2 mPlayerPos;
+        protected double mAttackCooldown;
+        protected double mLastAttack = 0.0f;
 
         public AbstractEnemy()
         {
+            mMaxAnim = 1;
         }
 
         public override void Initialize(Texture2D lTex, Vector2 lPos)
@@ -28,8 +31,22 @@ namespace BossJam
         public override void Draw(SpriteBatch lSpriteBatch)
         {
             base.Draw(lSpriteBatch);
-        }
 
+            if (mCurrAnim == mMaxAnim)
+                mCurrAnim = 0;
+            else
+                mCurrAnim++;
+
+            lSpriteBatch.Draw(
+                mTex,
+                mPos,
+                new Rectangle(
+                    (int)mPos.X*mCurrAnim,
+                    (int)mPos.Y,
+                    mAnimDims.X,
+                    mAnimDims.Y),
+                 Color.White);
+        }
 
         protected override void Move(GameTime lGameTime)
         {
@@ -47,8 +64,6 @@ namespace BossJam
             if (Vector2.Distance(mPos, mPlayerPos) < 50.0f)
             {
                 //Attack function
-
-
             }
         }
     }
