@@ -17,7 +17,6 @@ namespace BossJam
         SpriteBatch spriteBatch;
         ScreenHandler mScreenHandler;
 
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -38,7 +37,6 @@ namespace BossJam
             mScreenHandler.Initialize(Content, GraphicsDevice);
 
             FileReader.GetFileReader().ReadFile("sdf","ty");
-
         }
 
         protected override void LoadContent()
@@ -68,9 +66,6 @@ namespace BossJam
         protected override void Draw(GameTime gameTime)
         {
             mScreenHandler.Draw(spriteBatch);
-
-
-
 
             base.Draw(gameTime);
         }

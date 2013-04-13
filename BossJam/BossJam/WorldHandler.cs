@@ -26,7 +26,7 @@ namespace BossJam
         GameObject[,] mWorld;
         Texture2D a;
 
-        
+
         AbstractEnemy mNeuron = new Neuron();
 
         public WorldHandler()
@@ -39,7 +39,9 @@ namespace BossJam
             mContentManager = lContentManager;
             mGraphicsDevice = lGraphicsDevice;
 
-            
+
+            mNeuron.Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.NEURON), new Vector2(100, 100));
+
             mCamera = new Camera(mGraphicsDevice.Viewport, new Rectangle(0, 0, WorldConstants.WorldSizeX * WorldConstants.TileSize, WorldConstants.WorldSizeY * WorldConstants.TileSize));
             mNeuron.Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.NEURON), new Vector2(50.0f, 50.0f));
             CreateWorld();
@@ -105,18 +107,8 @@ namespace BossJam
             //   y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
             //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y - 1], lGameTime); //UpRight
 
+               Player.GetPlayer().Update(lGameTime);
 
-            //if (x - 1 >= 0 && x - 1 < WorldConstants.WorldSizeX &&
-            //   y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
-            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x - 1, y - 1], lGameTime); //Upleft
-
-            //if (y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
-            //    CollisionHandler.GetCollisionHandler().IsColliding(Player.GetPlayer(), mWorld[x, y + 1]);   //Down
-
-            //if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX)
-            //    CollisionHandler.GetCollisionHandler().IsColliding(Player.GetPlayer(), mWorld[x + 1, y]);         //Right
-
-            Player.GetPlayer().Update(lGameTime);
 
             //firstNeuron.Update(lGameTime);
         }
@@ -132,12 +124,8 @@ namespace BossJam
                     mWorld[x, y].Draw(lSpriteBatch);
                 }
             }
-            
-
             mNeuron.Draw(lSpriteBatch);
             lSpriteBatch.End();
-
-            
         }
     }
 }

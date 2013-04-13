@@ -9,12 +9,8 @@ namespace BossJam
 {
     abstract class AbstractEnemy : AnimatedObj
     {
-        bool randstuff;
-
         protected Vector2 mPlayerPos;
         int cD;
-        protected double mAttackCooldown;
-        protected double mLastAttack = 0.0f;
         public AbstractEnemy()
         {
             mMaxAnim = 46;
@@ -24,7 +20,6 @@ namespace BossJam
         {
             base.Initialize(lTex, lPos);
             cD = 0;
-            randstuff = true;
         }
 
         public override void Update(GameTime lGameTime)
@@ -34,16 +29,13 @@ namespace BossJam
 
         public override void Draw(SpriteBatch lSpriteBatch)
         {
-            //base.Draw(lSpriteBatch);
-
-            if (mCurrAnim == mMaxAnim-1)
+            if (mCurrAnim == mMaxAnim - 1)
             {
                 mCurrAnim = 0;
             }
             mCurrAnim++;
 
                 lSpriteBatch.Draw(mTex, mPos, new Rectangle((mTex.Width / mMaxAnim) * mCurrAnim, 0, mTex.Width / mMaxAnim, mTex.Height), Color.White, 0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0f);
-            
         }
 
         protected override void Move(GameTime lGameTime)
@@ -60,11 +52,11 @@ namespace BossJam
                 else
                     mPos.Y += mSpeed * -1 * lGameTime.ElapsedGameTime.Milliseconds;
             }
-    }
+        }
+
 
         protected override void Attack()
         {
-
             if (Vector2.Distance(mPos, Player.GetPlayer().GetPos()) < 50.0f && cD == 0)
             {
                 cD++;
@@ -85,3 +77,5 @@ namespace BossJam
         }
     }
 }
+
+

@@ -5,14 +5,12 @@ using System.Text;
 using System.IO;
 using Microsoft.Xna.Framework;
 
-
 namespace BossJam
 {
     sealed class FileReader
     {
         static private FileReader mFileReader = new FileReader();
         private string mFile;
-        //private float [,]verts = new float[*];
         private string tempLoad;
         List<float> vertX;
         List<float> vertY;
@@ -24,6 +22,8 @@ namespace BossJam
             vertY = new List<float>();
             vertID = new List<float>();
         }
+        private List<string> mReadList;
+        private List<float> mVertices;
 
         public static FileReader GetFileReader()
         {
@@ -33,14 +33,13 @@ namespace BossJam
 
         public void ReadFile(string fileName, string fileType)
         {
+            return;
             
 	        //Filnamn
             mFile = fileName + fileType;
             mFile = "random.txt";
             FileStream levelFile = new FileStream(mFile, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
             StreamReader sReader = new StreamReader(levelFile);
-
-
 
             int i = 0;
             do

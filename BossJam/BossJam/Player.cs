@@ -60,9 +60,9 @@ namespace BossJam
             mHitY = false;
             mJumpAllowed = true;
 
+            mMaxAnim = 1;
 
             mPlayerAttackCooldown = 0;
-           // CalcRotation();
         }
 
         public Boolean Dead()
@@ -140,8 +140,14 @@ namespace BossJam
                 mPV.Draw(lSpriteBatch, mRect, (float)Math.PI);
             else
                 mPV.Draw(lSpriteBatch, mRect, 0.0f);
+
+            lSpriteBatch.Draw(mTex,
+                mPos,
+                mRect,
+                Color.White);
         }
 
+        
         protected override void Move(GameTime lGameTime)
         {
             //if (mDir.X > -0.1f && mDir.X < 0.1f)
