@@ -3,27 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using Microsoft.Xna.Framework;
 
 
 namespace BossJam
 {
-    class FileReader
+    sealed class FileReader
     {
-        private string mOpenLevel;
-        private string mLadda;
+        static private FileReader mFileReader = new FileReader();
+        private string mFile;
 
-
-        public void readLevel()
+        private FileReader()
         {
+        }
 
+        public static FileReader GetFileReader()
+        {
+            return mFileReader;
+        }
 
-	    //Filnamn
-	    mOpenLevel = "LEVELNAME.txt";
+        public void ReadFile(string fileName, string fileType)
+        {
+	        //Filnamn
+            mFile = fileName + fileType;
 
+            FileStream levelFile = new FileStream(mFile, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+            StreamReader sReader = new StreamReader(levelFile);
 
-	        FileStream levelFile = new FileStream(mOpenLevel, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            StreamReader laser = new StreamReader(levelFile);
-
+            string reader = sReader.ReadToEnd();
 
             //Save for later
             //mLadda = laser.ReadLine();
@@ -43,13 +50,10 @@ namespace BossJam
             //    mLadda = laser.ReadLine();
             //    LEVELVECTOR.Y = float.Parse(mLadda);
             //}
-            
 
             //stäng fil
-            laser.Close();
+            sReader.Close();
             levelFile.Close();
-
-
         }
 
     }

@@ -38,7 +38,6 @@ namespace BossJam
             spriteFont = lContentManager.Load<SpriteFont>("spriteFont1");
             mHealthColor = new Color(0, 0, 0);
 
-
             //REMOVE LATER
 
             dialog = " LOOK A LONG STRING OF TEXT AND STUFF";
@@ -70,24 +69,28 @@ namespace BossJam
 
             lSpriteBatch.Begin();
             //Health color change
+
+
             if (Player.GetPlayer().GetHealth() > 10)
             {
                 mHealthColor.R = (byte)(255 - 2.5f * Player.GetPlayer().GetHealth() + 20);
                 mHealthColor.G = (byte)(2.5 * Player.GetPlayer().GetHealth() - 20);
             }
-
             //lSpriteBatch.Draw(mUITexture, new Rectangle(0, 0, 1024, 768), null, Color.White, 0.0f, Vector2.Zero, SpriteEffects.None, 0.0f);
 
             lSpriteBatch.DrawString(spriteFont, "Health: " + Player.GetPlayer().GetHealth(),new Vector2(305,20), mHealthColor);
 
-            lSpriteBatch.DrawString(spriteFont, "Crit chance: 100%", new Vector2(500, 20), Color.GhostWhite);
+            if (Player.GetPlayer().Dead())
+                lSpriteBatch.DrawString(spriteFont, "YOU DIED MOFO!", new Vector2(305, 20), Color.OrangeRed);
+            else
+                lSpriteBatch.DrawString(spriteFont, "Health: " + Player.GetPlayer().GetHealth(), new Vector2(305, 20), mHealthColor);
 
+
+            lSpriteBatch.DrawString(spriteFont, "Crit chance: 100%", new Vector2(500, 20), Color.GhostWhite);
 
             lSpriteBatch.DrawString(spriteFont, "" + dialog, new Vector2(305, 660), Color.GhostWhite);
             lSpriteBatch.DrawString(spriteFont, "" + dialog, new Vector2(305, 680), Color.GhostWhite);
             lSpriteBatch.DrawString(spriteFont, "" + dialog, new Vector2(305, 700), Color.GhostWhite);
-
-            //lSpriteBatch.DrawString(spriteFont, "Armor: 100", new Vector2(5, 10), Color.GhostWhite);
 
             lSpriteBatch.End();
         }

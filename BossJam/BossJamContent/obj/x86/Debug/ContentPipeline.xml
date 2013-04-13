@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Lamp.xnb</Output>
-      <Time>2013-04-13T02:18:58.4376089+02:00</Time>
+      <Time>2013-04-13T04:24:01.5207607+02:00</Time>
     </Item>
     <Item>
       <Source>Images\Block.png</Source>
@@ -56,22 +56,22 @@
       <Time>2013-04-13T02:18:46.1809079+02:00</Time>
     </Item>
     <Item>
-      <Source>Images\Neuron_PH.png</Source>
-      <Name>Images\Neuron_PH</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Neuron_PH.xnb</Output>
-      <Time>2013-04-13T02:18:46.182908+02:00</Time>
-    </Item>
-    <Item>
       <Source>Images\UI_Overlay.png</Source>
       <Name>Images\UI_Overlay</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\UI_Overlay.xnb</Output>
-      <Time>2013-04-13T02:18:58.4376089+02:00</Time>
+      <Time>2013-04-13T04:24:01.5237609+02:00</Time>
+    </Item>
+    <Item>
+      <Source>Images\Neuron.png</Source>
+      <Name>Images\Neuron</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Neuron.xnb</Output>
+      <Time>2013-04-13T04:24:13.3564377+02:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -80,7 +80,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2013-04-13T02:18:58.438609+02:00</Time>
+      <Time>2013-04-13T04:24:01.524761+02:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

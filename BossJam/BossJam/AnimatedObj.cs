@@ -15,6 +15,10 @@ namespace BossJam
         protected int mHealth;
         protected int mDmg;
 
+        protected int mMaxAnim; // Antalet rutor per animerat objekt
+        protected int mCurrAnim = 0;
+        protected Point mAnimDims;
+
         public AnimatedObj()
         {
             mSpeed = 0.0f;
@@ -27,6 +31,12 @@ namespace BossJam
         public override void Initialize(Texture2D lTex, Vector2 lPos)
         {
             base.Initialize(lTex, lPos);
+            if (mMaxAnim > 0)
+            {
+                mAnimDims.X = mTex.Width / mMaxAnim;
+            }
+            mAnimDims.Y = mTex.Height;
+            mRect = new Rectangle((int)mPos.X, (int)mPos.Y, mAnimDims.X, mAnimDims.Y);
         }
 
         public override void Update(GameTime lGameTime)

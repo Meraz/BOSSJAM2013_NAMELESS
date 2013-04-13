@@ -23,6 +23,7 @@ namespace BossJam
         public const float PlayerHeigth = 100;
 
         private float mJumpSpeed = 0.1f;
+        private const int MaxPlayerSpeed = 100;
         private float mPlayerGravity = 0.01f;
         
         private PlayerState mPlayerState;
@@ -62,6 +63,11 @@ namespace BossJam
            // CalcRotation();
         }
 
+        public Boolean Dead()
+        {
+            return mHealth <= 0;
+        }
+
         public Vector2 GetPos()
         {
             return mPos;
@@ -71,6 +77,16 @@ namespace BossJam
         {
             return mDir;
         }
+
+        public int GetHealth()
+        {
+            return mHealth;
+        }
+
+        public void Damage(int DMG)
+        {
+            mHealth += DMG;
+        }       
 
         public override void Initialize(Texture2D lTex, Vector2 lPos)
         {
@@ -191,12 +207,6 @@ namespace BossJam
         public void SetHealth(int Health)
         {
             mHealth += Health;
-        }
-
-
-        public int GetHealth()
-        {
-            return mHealth;
         }
 
         protected override void Attack()

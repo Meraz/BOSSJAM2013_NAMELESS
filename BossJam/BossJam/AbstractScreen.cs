@@ -36,7 +36,7 @@ namespace BossJam
             mPreviousKeyboardState = mCurrentKeyboardState;
             mCurrentKeyboardState = Keyboard.GetState();
 
-            CheckKey();
+            //CheckKey();
         }
 
         protected virtual void CheckKey()

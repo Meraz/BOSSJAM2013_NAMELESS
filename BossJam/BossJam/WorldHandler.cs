@@ -26,9 +26,8 @@ namespace BossJam
         GameObject[,] mWorld;
         Texture2D a;
 
-
         Neuron firstNeuron = new Neuron();
-
+        AbstractEnemy mNeuron = new Neuron();
 
         public WorldHandler()
         {
@@ -43,7 +42,7 @@ namespace BossJam
             firstNeuron.Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.NEURON), new Vector2(100, 100));
 
             mCamera = new Camera(mGraphicsDevice.Viewport, new Rectangle(0, 0, WorldConstants.WorldSizeX * WorldConstants.TileSize, WorldConstants.WorldSizeY * WorldConstants.TileSize));
-
+            mNeuron.Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.NEURON), new Vector2(50.0f, 50.0f));
             CreateWorld();
         }
 
@@ -82,6 +81,7 @@ namespace BossJam
             //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX+1,       lPosY+1]);
             //
             //CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[lPosX+1,       lPosY-1]); //Right three
+            mNeuron.Update(lGameTime);
 
             if (y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
 		        CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x,         y+1], lGameTime);   //Down
@@ -130,8 +130,8 @@ namespace BossJam
                 }
             }
             
-            
             firstNeuron.Draw(lSpriteBatch);
+            mNeuron.Draw(lSpriteBatch);
             lSpriteBatch.End();
 
             
