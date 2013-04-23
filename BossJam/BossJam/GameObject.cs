@@ -41,7 +41,6 @@ namespace BossJam
             mRect = new Rectangle((int)mPos.X, (int)mPos.Y, GameObjectConstants.X, GameObjectConstants.Y);
         }
 
-
         public abstract void Update(GameTime lGameTime);
 
         public virtual void Draw(SpriteBatch lSpriteBatch)

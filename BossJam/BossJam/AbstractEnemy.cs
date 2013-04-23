@@ -11,6 +11,7 @@ namespace BossJam
     {
         protected Vector2 mPlayerPos;
         int cD;
+
         public AbstractEnemy()
         {
             mMaxAnim = 46;
@@ -29,13 +30,23 @@ namespace BossJam
 
         public override void Draw(SpriteBatch lSpriteBatch)
         {
-            if (mCurrAnim == mMaxAnim - 1)
+            if (mCurrAnim == mMaxAnim)
             {
                 mCurrAnim = 0;
             }
             mCurrAnim++;
-
-                lSpriteBatch.Draw(mTex, mPos, new Rectangle((mTex.Width / mMaxAnim) * mCurrAnim, 0, mTex.Width / mMaxAnim, mTex.Height), Color.White, 0f, Vector2.Zero, 1.0f, SpriteEffects.None, 0f);
+            if (this is BearTrapBrain)
+            {
+                if (mEffect == SpriteEffects.FlipHorizontally)
+                {
+                    mEffect = SpriteEffects.None;
+                }
+                else if (mEffect == SpriteEffects.None)
+                {
+                    mEffect = SpriteEffects.FlipHorizontally;
+                }
+            }
+            lSpriteBatch.Draw(mTex, mPos, new Rectangle((mTex.Width / mMaxAnim) * mCurrAnim, 0, mTex.Width / mMaxAnim, mTex.Height), Color.White, 0f, Vector2.Zero, 1.0f, mEffect, 0f);
         }
 
         protected override void Move(GameTime lGameTime)
@@ -43,11 +54,17 @@ namespace BossJam
             if (Vector2.Distance(mPos, Player.GetPlayer().GetPos()) > 20.0f)
             {
                 if (Player.GetPlayer().GetPos().X > mPos.X)
+                {
                     mPos.X += mSpeed * lGameTime.ElapsedGameTime.Milliseconds;
+                    mEffect = SpriteEffects.FlipHorizontally;
+                }
                 else
+                {
                     mPos.X += mSpeed * -1 * lGameTime.ElapsedGameTime.Milliseconds;
+                    mEffect = SpriteEffects.None;
+                }
 
-                if (Player.GetPlayer().GetPos().Y > mPos.Y)
+                if (Player.GetPlayer().GetPos().Y < mPos.Y)
                     mPos.Y += mSpeed * lGameTime.ElapsedGameTime.Milliseconds;
                 else
                     mPos.Y += mSpeed * -1 * lGameTime.ElapsedGameTime.Milliseconds;

@@ -11,7 +11,7 @@ namespace BossJam
     {
         public BearTrapBrain()
         {
-            mSpeed = 1.0f;
+            mSpeed = 0.1f;
         }
 
         public override void Initialize(Texture2D lTex, Vector2 lPos)

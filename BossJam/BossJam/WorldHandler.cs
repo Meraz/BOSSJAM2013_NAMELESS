@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 
-
 namespace BossJam
 {
     static class WorldConstants
@@ -26,7 +25,7 @@ namespace BossJam
         List<GameObject> mWorldEndless;
         List<Sprite> mSprite;
 
-        AbstractEnemy mNeuron = new Neuron();
+        private EnemyHandler mEH = new EnemyHandler(20);
 
         public WorldHandler()
         {
@@ -39,12 +38,11 @@ namespace BossJam
             mContentManager = lContentManager;
             mGraphicsDevice = lGraphicsDevice;
 
-            mNeuron.Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.NEURON), new Vector2(100, 100));
-
             mCamera = new Camera(mGraphicsDevice.Viewport, new Rectangle(0, 0, WorldConstants.WorldSizeX * WorldConstants.TileSize, WorldConstants.WorldSizeY * WorldConstants.TileSize));
-            mNeuron.Initialize(TextureHandler.GetTextureHandler().GetTexture(TextureHandler.TextureType.NEURON), new Vector2(50.0f, 50.0f));
 
             CreateTree();
+            mCamera = new Camera(mGraphicsDevice.Viewport, new Rectangle(0, 0, WorldConstants.WorldSizeX * WorldConstants.TileSize, WorldConstants.WorldSizeY * WorldConstants.TileSize));
+            mEH.Initialize();
             CreateWorld();
         }
 
@@ -96,17 +94,43 @@ namespace BossJam
         {
             mCamera.Update(lGameTime);
             Player.GetPlayer().UpdateInfo(lGameTime);
-            if (Player.GetPlayer().GetPos().X >= 50*350)
-            {
+            if (Player.GetPlayer().GetPos().X >= 50 * 350)
                 ChangePositionOnEntities();
-            }
 
-            for (int i = 0; i < 1350; i++)
+            Vector2 lPos = Player.GetPlayer().GetPos();
+            int x = ((int)lPos.X + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
+            int y = ((int)lPos.Y + (WorldConstants.TileSize/2)) / WorldConstants.TileSize;
+            
+            
+              for (int i = 0; i < 1350; i++)
             {
                 CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorldEndless.ElementAt(i), lGameTime);
             }
 
+            //if (y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
+            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x, y + 1], lGameTime);   //Down
 
+            //if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX)
+            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y], lGameTime);         //Right
+
+            //if (y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
+            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x, y - 1], lGameTime);         //Up
+            //if (x - 1 >= 0 && x + 1 < WorldConstants.WorldSizeX)
+            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x - 1, y], lGameTime);         //Left
+
+            //if (x - 1 >= 0 && x - 1 < WorldConstants.WorldSizeX &&
+            //   y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
+            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x - 1, y + 1], lGameTime);     //Downleft
+
+            //if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX &&
+            //   y + 1 >= 0 && y + 1 < WorldConstants.WorldSizeY)
+            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y + 1], lGameTime);     //DownRight
+
+            //if (x + 1 >= 0 && x + 1 < WorldConstants.WorldSizeX &&
+            //   y - 1 >= 0 && y - 1 < WorldConstants.WorldSizeY)
+            //    CollisionHandler.GetCollisionHandler().CheckCollision(Player.GetPlayer(), mWorld[x + 1, y - 1], lGameTime); //UpRight
+            mEH.Update(lGameTime);
+            Player.GetPlayer().Update(lGameTime);
             Player.GetPlayer().Update(lGameTime);
 
         }
@@ -114,6 +138,8 @@ namespace BossJam
         {
             lSpriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, mCamera.GetViewMatrix());
             for (int i = 0; i < 28; i++)
+
+            for (int y = 0; y < WorldConstants.WorldSizeY; y++)
             {
                 mSprite.ElementAt(i).Draw(lSpriteBatch);
             }
@@ -123,7 +149,8 @@ namespace BossJam
             }
 
             Player.GetPlayer().Draw(lSpriteBatch);
-            mNeuron.Draw(lSpriteBatch);
+            mEH.Draw(lSpriteBatch);
+            Player.GetPlayer().Draw(lSpriteBatch);
             lSpriteBatch.End();
         }
     }

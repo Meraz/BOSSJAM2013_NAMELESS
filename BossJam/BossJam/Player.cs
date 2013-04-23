@@ -22,9 +22,9 @@ namespace BossJam
         public const float PlayerWidth = 100;
         public const float PlayerHeigth = 100;
 
-        private float mJumpSpeed = 500;
+        private float mJumpSpeed = 170;
         private const int MaxPlayerSpeed = 100;
-        private float mPlayerGravity = 25;
+        private float mPlayerGravity = 5;
         
         private PlayerState mPlayerState;
         private PlayerView mPV = new PlayerView();
@@ -60,7 +60,7 @@ namespace BossJam
             mHitY = false;
             mJumpAllowed = true;
 
-            mMaxAnim = 1;
+            mMaxAnim = 46;
 
             mPlayerAttackCooldown = 0;
         }
@@ -109,10 +109,24 @@ namespace BossJam
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 mDir.X = -500.0f * (float)lGameTime.ElapsedGameTime.TotalSeconds;
+                mEffect = SpriteEffects.None;
+                if (mCurrAnim == mMaxAnim)
+                {
+                    mCurrAnim = 0;
+                }
+                else
+                    mCurrAnim++;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 mDir.X = 500.0f * (float)lGameTime.ElapsedGameTime.TotalSeconds;
+                mEffect = SpriteEffects.FlipHorizontally;
+                if (mCurrAnim == mMaxAnim)
+                {
+                    mCurrAnim = 0;
+                }
+                else
+                    mCurrAnim++;
             }
             else
                 mDir.X = 0;
@@ -146,6 +160,8 @@ namespace BossJam
                 mPos,
                 mRect,
                 Color.White);
+
+            lSpriteBatch.Draw(mTex, mPos, mRect, Color.White, 0f, Vector2.Zero, 1.0f, mEffect, 0f);
         }
 
         

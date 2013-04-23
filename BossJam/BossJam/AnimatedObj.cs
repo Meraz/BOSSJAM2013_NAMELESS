@@ -19,6 +19,8 @@ namespace BossJam
         protected int mCurrAnim = 0;
         protected int mMaxX;
 
+        protected SpriteEffects mEffect = SpriteEffects.None;
+
         public AnimatedObj()
         {
             mSpeed = 0.0f;

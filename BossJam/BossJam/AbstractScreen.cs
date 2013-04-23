@@ -41,6 +41,11 @@ namespace BossJam
 
         protected virtual void CheckKey()
         {
+            if (Player.GetPlayer().Dead() || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                mScreenState = ScreenHandler.ScreenState.End;
+            }
+
             //if (mCurrentKeyboardState.IsKeyDown(Keys.Q) && mPreviousKeyboardState.IsKeyUp(Keys.Q))
             //    mScreenState = ScreenHandler.ScreenState.Menu;
             //if (mCurrentKeyboardState.IsKeyDown(Keys.W) && mPreviousKeyboardState.IsKeyUp(Keys.W))
