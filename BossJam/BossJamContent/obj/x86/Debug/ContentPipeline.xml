@@ -143,7 +143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\BeartrapBrain.xnb</Output>
-      <Time>2013-04-13T11:45:28.1527094+02:00</Time>
+      <Time>2013-04-23T14:26:28.3345241+02:00</Time>
     </Item>
     <Item>
       <Source>Images\Endscreen.png</Source>
@@ -152,7 +152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\Endscreen.xnb</Output>
-      <Time>2013-04-13T11:45:28.1537095+02:00</Time>
+      <Time>2013-04-23T14:26:28.402528+02:00</Time>
     </Item>
     <Item>
       <Source>Images\träd2.png</Source>
@@ -170,7 +170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\bulten\BOSSJAM2013_NAMELESS\BossJam\BossJam\bin\x86\Debug\Content\Images\gubbe.xnb</Output>
-      <Time>2013-04-13T11:45:28.1557096+02:00</Time>
+      <Time>2013-04-23T14:26:28.4645316+02:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
